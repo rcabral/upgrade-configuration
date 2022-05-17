@@ -1,0 +1,524 @@
+<UpgradeConfiguration>
+  <build majorVersion="0" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_0_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_0_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 0.0.0.180122</message>
+  </build>
+  <build majorVersion="1" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_1_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_1_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 1.0.0.180122</message>
+  </build>
+  <build majorVersion="2" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_2_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_2_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 2.0.0.180122</message>
+  </build>
+  <build majorVersion="3" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_3_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_3_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 3.0.0.180122</message>
+  </build>
+  <build majorVersion="4" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_4_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_4_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 4.0.0.180122</message>
+  </build>
+  <build majorVersion="5" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_5_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_5_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 5.0.0.180122</message>
+  </build>
+  <build majorVersion="6" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_6_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_6_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 6.0.0.180122</message>
+  </build>
+  <build majorVersion="7" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_7_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_7_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 7.0.0.180122</message>
+  </build>
+  
+   <build majorVersion="8" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_8_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_8_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 8.0.0.180122</message>
+  </build>
+  <build majorVersion="9" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_9_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_9_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 8.0.0.180122</message>
+  </build>
+  
+  <build majorVersion="10" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_10_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_10_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 8.0.0.180122</message>
+  </build> 
+  
+  
+   <build majorVersion="11" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_11_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_11_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 8.0.0.180122</message>
+  </build> 
+  
+  <build majorVersion="12" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_12_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_12_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 8.0.0.180122</message>
+  </build> 
+  
+  <build majorVersion="13" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_13_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_13_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="2">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.com.upgrade.CustomTest</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 8.0.0.180122</message>
+  </build> 
+  
+  <build majorVersion="14" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_14_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_14_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 8.0.0.180122</message>
+  </build> 
+  
+  <build majorVersion="15" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_15_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_15_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 15.0.0.180122</message>
+  </build>
+  
+  <build majorVersion="16" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_16_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_16_0;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_16_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 16.0.0.180122</message>
+  </build>
+  
+  <build majorVersion="17" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_17_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_17_0;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_17_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 17.0.0.180122</message>
+  </build>
+  
+  <build majorVersion="18" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_18_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_18_0;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_18_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 18.0.0.180122</message>
+  </build>
+  
+   <build majorVersion="19" minorVersion="0" releaseVersion="0" buildNumber="220323" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_19_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_19_0;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_19_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 18.0.0.180122</message>
+  </build>
+  <build majorVersion="20" minorVersion="0" releaseVersion="0" buildNumber="220401" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_20_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_20_0;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_20_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 20.0.0.220401</message>
+  </build>
+  <build majorVersion="21" minorVersion="0" releaseVersion="0" buildNumber="220406" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_21_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_21_0;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE table_teste_21_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 21.0.0.220406</message>
+  </build>
+  
+  <build majorVersion="22" minorVersion="0" releaseVersion="0" buildNumber="220410" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE cliente( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE cliente;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE produtos( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 22.0.0.220410</message>
+  </build>
+ 
+  
+  
+</UpgradeConfiguration>

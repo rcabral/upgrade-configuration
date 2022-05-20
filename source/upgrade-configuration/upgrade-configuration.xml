@@ -426,99 +426,14 @@
     <message>UpgradeConfiguration version 17.0.0.180122</message>
   </build>
   
-  <build majorVersion="18" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+  <build majorVersion="18" minorVersion="0" releaseVersion="0" buildNumber="180522" buildSequence="0">
     <steps>
       <Step number="0">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_18_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-        <downgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>DROP TABLE table_teste_18_0;</sql>
-        </downgrade>
-      </Step>
-      <Step number="1">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_18_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.puc.rio.sample.HelloCustomAction</className>
         </upgrade>
       </Step>
     </steps>
-    <message>UpgradeConfiguration version 18.0.0.180122</message>
+    <message>UpgradeConfiguration version 18.0.0.190522</message>
   </build>
-  
-   <build majorVersion="19" minorVersion="0" releaseVersion="0" buildNumber="220323" buildSequence="0">
-    <steps>
-      <Step number="0">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_19_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-        <downgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>DROP TABLE table_teste_19_0;</sql>
-        </downgrade>
-      </Step>
-      <Step number="1">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_19_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-      </Step>
-    </steps>
-    <message>UpgradeConfiguration version 18.0.0.180122</message>
-  </build>
-  <build majorVersion="20" minorVersion="0" releaseVersion="0" buildNumber="220401" buildSequence="0">
-    <steps>
-      <Step number="0">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_20_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-        <downgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>DROP TABLE table_teste_20_0;</sql>
-        </downgrade>
-      </Step>
-      <Step number="1">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_20_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-      </Step>
-    </steps>
-    <message>UpgradeConfiguration version 20.0.0.220401</message>
-  </build>
-  <build majorVersion="21" minorVersion="0" releaseVersion="0" buildNumber="220406" buildSequence="0">
-    <steps>
-      <Step number="0">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_21_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-        <downgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>DROP TABLE table_teste_21_0;</sql>
-        </downgrade>
-      </Step>
-      <Step number="1">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE table_teste_21_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-      </Step>
-    </steps>
-    <message>UpgradeConfiguration version 21.0.0.220406</message>
-  </build>
-  
-  <build majorVersion="22" minorVersion="0" releaseVersion="0" buildNumber="220410" buildSequence="0">
-    <steps>
-      <Step number="0">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE cliente( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-        <downgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>DROP TABLE cliente;</sql>
-        </downgrade>
-      </Step>
-      <Step number="1">
-        <upgrade class="br.puc.rio.model.RunSQLAction">
-          <sql>CREATE TABLE produtos( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
-        </upgrade>
-      </Step>
-    </steps>
-    <message>UpgradeConfiguration version 22.0.0.220410</message>
-  </build>
- 
-  
-  
 </UpgradeConfiguration>

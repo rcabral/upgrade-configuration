@@ -4,5 +4,5 @@ import javax.persistence.EntityManager;
 
 public interface Action {
 	public ActionType getActionType();
-	public void execute(EntityManager entityManager);
+	public void execute(EntityManager entityManager) throws Exception;
 }

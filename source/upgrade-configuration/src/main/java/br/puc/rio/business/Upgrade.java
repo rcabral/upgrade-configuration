@@ -58,7 +58,7 @@ public class Upgrade implements Update {
 					countSteps = j + 1;
 				}
 				buildInformationDao.persist(new BuildInformation(build, build.getSteps().size(),Status.COMPLETE));
-			} catch (RuntimeException e) {
+			} catch (Exception e) {
 				System.out.println("Build execution error:" + build + " " + "Step:" + lastStepExecuted.getNumber());
 				e.printStackTrace();
 				if(countSteps > 0)

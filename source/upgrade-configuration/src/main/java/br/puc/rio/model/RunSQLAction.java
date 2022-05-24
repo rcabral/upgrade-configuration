@@ -2,8 +2,6 @@ package br.puc.rio.model;
 
 import javax.persistence.EntityManager;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 public class RunSQLAction implements Action{
 	private String sql;
 		

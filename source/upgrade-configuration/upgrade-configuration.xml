@@ -447,4 +447,15 @@
     </steps>
     <message>UpgradeConfiguration version 19.0.0.230522</message>
   </build>
+  
+  <build majorVersion="20" minorVersion="0" releaseVersion="0" buildNumber="230522" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.puc.rio.sample.HelloCustomAction</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 23.0.0.230522</message>
+  </build>
 </UpgradeConfiguration>

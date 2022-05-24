@@ -32,7 +32,7 @@ public class BuildInformationDao {
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append("from BuildInformation ");
-			sql.append(" order by buildSequence, buildNumber, releaseVersion, minorVersion, majorVersion desc  ");
+			sql.append(" order by majorVersion desc, minorVersion desc, releaseVersion desc, buildNumber desc, buildSequence desc  ");
 			return em.createQuery(sql.toString(),BuildInformation.class).setMaxResults(1).getSingleResult();
 		} catch (NoResultException e) {
 			return null;

@@ -458,4 +458,38 @@
     </steps>
     <message>UpgradeConfiguration version 23.0.0.230522</message>
   </build>
+  
+  <build majorVersion="21" minorVersion="0" releaseVersion="0" buildNumber="240822" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.puc.rio.sample.HelloCustomAction</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 23.0.0.230522</message>
+  </build>
+  
+  <build majorVersion="22" minorVersion="0" releaseVersion="0" buildNumber="2408222" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.puc.rio.sample.HelloCustomAction</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 23.0.0.230522</message>
+  </build>
+  
+  <build majorVersion="23" minorVersion="0" releaseVersion="0" buildNumber="2408223" buildSequence="0">
+    <steps>
+      <Step number="0">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.puc.rio.sample.HelloCustomAction</className>
+        </upgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 23.0.0.230522</message>
+  </build>
+  
 </UpgradeConfiguration>

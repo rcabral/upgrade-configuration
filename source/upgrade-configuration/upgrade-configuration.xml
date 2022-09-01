@@ -356,7 +356,7 @@
     <message>UpgradeConfiguration version 8.0.0.180122</message>
   </build> 
   
-  <build majorVersion="14" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0">
+  <build majorVersion="14" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0" downgrade = "true">
     <steps>
       <Step number="0">
         <upgrade class="br.puc.rio.model.RunSQLAction">
@@ -378,11 +378,17 @@
         <upgrade class="br.puc.rio.model.RunSQLAction">
           <sql>CREATE TABLE table_teste_15_0( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
         </upgrade>
+         <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_15_0;</sql>
+        </downgrade>
       </Step>
       <Step number="1">
         <upgrade class="br.puc.rio.model.RunSQLAction">
           <sql>CREATE TABLE table_teste_15_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
         </upgrade>
+         <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_15_1;</sql>
+        </downgrade>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 15.0.0.180122</message>
@@ -402,6 +408,9 @@
         <upgrade class="br.puc.rio.model.RunSQLAction">
           <sql>CREATE TABLE table_teste_16_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
         </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_16_1;</sql>
+        </downgrade>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 16.0.0.180122</message>
@@ -421,6 +430,9 @@
         <upgrade class="br.puc.rio.model.RunSQLAction">
           <sql>CREATE TABLE table_teste_17_1( id INT NOT NULL,title VARCHAR(50) NOT NULL,author VARCHAR(20) NOT NULL,submission_date DATE,PRIMARY KEY (id));</sql>
         </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE table_teste_17_1;</sql>
+        </downgrade>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 17.0.0.180122</message>
@@ -441,8 +453,11 @@
     <steps>
       <Step number="0">
         <upgrade class="br.puc.rio.model.RunSQLFileAction">
-          <path>demo/script.sql</path>
+          <path>demo/upgrade-script.sql</path>
         </upgrade>
+        <downgrade class="br.puc.rio.model.RunSQLFileAction">
+          <path>demo/downgrade-script.sql</path>
+        </downgrade>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 19.0.0.230522</message>
@@ -471,8 +486,18 @@
   </build>
   
   <build majorVersion="22" minorVersion="0" releaseVersion="0" buildNumber="2408222" buildSequence="0">
-    <steps>
+     <steps>
       <Step number="0">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.puc.rio.sample.HelloCustomAction</className>
+        </upgrade>
+      </Step>
+      <Step number="1">
+        <upgrade class="br.puc.rio.model.CustomAction">
+          <className>br.puc.rio.sample.HelloCustomAction</className>
+        </upgrade>
+      </Step>
+      <Step number="3">
         <upgrade class="br.puc.rio.model.CustomAction">
           <className>br.puc.rio.sample.HelloCustomAction</className>
         </upgrade>

@@ -1,10 +1,13 @@
 package br.puc.rio.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+import com.thoughtworks.xstream.converters.basic.BooleanConverter;
 
 public class Build implements Comparable<Build> {
 	@XStreamAsAttribute
@@ -17,8 +20,11 @@ public class Build implements Comparable<Build> {
 	private String buildNumber;
 	@XStreamAsAttribute
 	private int buildSequence;
-	List<Step> steps;
+	List<Step> steps = new ArrayList<>();
 	private String message;
+	@XStreamAsAttribute
+	@XStreamConverter(value=BooleanConverter.class, booleans={false}, strings={"true", "false"})
+	private boolean downgrade;
 		
 	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
 			List<Step> steps, String message) {
@@ -53,6 +59,12 @@ public class Build implements Comparable<Build> {
 		return new CompareToBuilder().append(majorVersion, otherBuild.majorVersion).append(minorVersion, otherBuild.minorVersion)
 				.append(releaseVersion, otherBuild.releaseVersion).append(buildNumber, otherBuild.buildNumber)
 				.append(buildSequence, otherBuild.buildSequence).toComparison();
+	}
+	
+	public int compareTo(final BuildInformation buildInformation) {
+		return new CompareToBuilder().append(majorVersion, buildInformation.getMajorVersion()).append(minorVersion, buildInformation.getMinorVersion())
+				.append(releaseVersion, buildInformation.getReleaseVersion()).append(buildNumber, buildInformation.getBuildNumber())
+				.append(buildSequence, buildInformation.getBuildSequence()).toComparison();
 	}
 
 	@Override
@@ -117,8 +129,13 @@ public class Build implements Comparable<Build> {
 	}
 
 	public String getMessage() {
-		return message;
+		return message==null?this.toString():this.message;
 	}
 
+	public boolean isDowngrade() {
+		return downgrade;
+	}
+	
+	
 
 }

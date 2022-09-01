@@ -1,5 +1,7 @@
 package br.puc.rio.model;
 
+import java.util.Optional;
+
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
@@ -56,9 +58,10 @@ public class Step implements Comparable<Step> {
 	public Action getUpgradeAction() {
 		return upgradeAction;
 	}
-
-	public Action getDowngradeAction() {
-		return downgradeAction;
+	
+	
+	public Optional<Action> getDowngradeAction() {
+		return Optional.ofNullable(downgradeAction);
 	}
 	
 	@Override

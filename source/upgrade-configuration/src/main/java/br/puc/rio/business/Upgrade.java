@@ -1,7 +1,7 @@
 package br.puc.rio.business;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
@@ -26,7 +26,7 @@ public class Upgrade implements Update {
 		this.buildInformationDao = new BuildInformationDao(entityManager);
 		this.lastBuildInformation = buildInformationDao.getLastBuildInformation();
 		this.lastAppliedBuild = getLastAppliedBuild(lastBuildInformation);
-		this.builds = getBuilds(upgradeConfiguration);
+		this.builds = upgradeConfiguration.getBuilds();
 		this.index = new Index(this.builds, this.lastBuildInformation);
 	}
 
@@ -36,12 +36,6 @@ public class Upgrade implements Update {
 			lastAppliedBuild = lastBuildInformation.getBuild();
 		}
 		return lastAppliedBuild;
-	}
-
-	private List<Build> getBuilds(UpgradeConfiguration upgradeConfiguration) {
-		List<Build> builds = upgradeConfiguration.getBuilds();
-		Collections.sort(builds);
-		return builds;
 	}
 
 	public void execute() {
@@ -63,9 +57,13 @@ public class Upgrade implements Update {
 					step.getUpgradeAction().execute(entityManager);
 					countSteps = j + 1;
 				}
+				Optional<BuildInformation> appiedBuild = buildInformationDao.getBuildInformation(build);
+				if(appiedBuild.isPresent())
+					buildInformationDao.delete(appiedBuild.get());
 				buildInformationDao.persist(new BuildInformation(build, build.getSteps().size(), Status.COMPLETE));
+				System.out.println("Upgrade Message: " + build.getMessage());
 			} catch (Exception e) {
-				System.out.println("Build execution error:" + build + " " + "Step:" + lastStepExecuted.getNumber());
+				System.out.println("Upgrade Build execution error:" + build + " " + "Step:" + lastStepExecuted.getNumber());
 				e.printStackTrace();
 				if (countSteps > 0)
 					buildInformationDao.persist(new BuildInformation(build, countSteps, Status.PARCIAL));

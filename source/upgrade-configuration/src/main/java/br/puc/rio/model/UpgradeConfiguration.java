@@ -1,6 +1,8 @@
 package br.puc.rio.model;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
@@ -16,7 +18,20 @@ public class UpgradeConfiguration {
 	}
 
 	public List<Build> getBuilds() {
+		Collections.sort(builds);
 		return builds;
+	}
+	
+	public boolean isDowngrade() {
+		return getDowngradeBuild().isPresent();
+	}
+	
+	public Optional<Build> getDowngradeBuild() {
+		for (Build build : builds) 
+			if(build.isDowngrade())
+				return Optional.of(build);
+		
+		return Optional.empty();
 	}
 
 }

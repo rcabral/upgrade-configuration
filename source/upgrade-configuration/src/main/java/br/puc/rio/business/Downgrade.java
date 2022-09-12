@@ -14,27 +14,27 @@ import br.puc.rio.model.UpgradeConfiguration;
 public class Downgrade implements Update {
 	private EntityManager entityManager;
 	private BuildInformationDao buildInformationDao;
+	private List<BuildInformation> appliedBuildsInformation;
 	private Build lastBuildApplied;
-	private List<BuildInformation> appliedBuilds;
 	private Build downgradeBuild;
-	private List<Build> buildsInformation;
-	private List<BuildInformation> buildsToRevert;
+	private List<Build> buildsFromXML;
+	private List<BuildInformation> buildsInformationToRevert;
 
 	public Downgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager) {
 		this.entityManager = entityManager;
 		this.buildInformationDao = new BuildInformationDao(entityManager);
-		this.appliedBuilds = buildInformationDao.getAppliedBuilds();
+		this.appliedBuildsInformation = buildInformationDao.getAppliedBuilds();
 		this.lastBuildApplied = buildInformationDao.getLastBuildInformation().getBuild();
 		this.downgradeBuild = upgradeConfiguration.getDowngradeBuild().get();
-		this.buildsInformation = upgradeConfiguration.getBuilds();
-		this.buildsToRevert = getBuildsToRevert(this.appliedBuilds, this.downgradeBuild );
+		this.buildsFromXML = upgradeConfiguration.getBuilds();
+		this.buildsInformationToRevert = getBuildsInformationToRevert(this.appliedBuildsInformation, this.downgradeBuild );
 	}
 
-	private List<BuildInformation> getBuildsToRevert(List<BuildInformation> appliedBuilds, Build downgradeBuild){
+	private List<BuildInformation> getBuildsInformationToRevert(List<BuildInformation> appliedBuilds, Build downgradeBuild){
 		List<BuildInformation> buildsToRevert = new ArrayList<>();
-		if(this.appliedBuilds.contains(new BuildInformation(downgradeBuild))){
-			for (int i = 0; i < this.appliedBuilds.size() && downgradeBuild.compareTo(this.appliedBuilds.get(i)) < 0 ; i++) {
-				BuildInformation build = this.appliedBuilds.get(i);
+		if(this.appliedBuildsInformation.contains(new BuildInformation(downgradeBuild))){
+			for (int i = 0; i < this.appliedBuildsInformation.size() && downgradeBuild.compareTo(this.appliedBuildsInformation.get(i)) < 0 ; i++) {
+				BuildInformation build = this.appliedBuildsInformation.get(i);
 				buildsToRevert.add(build);
 			}
 		}
@@ -46,29 +46,28 @@ public class Downgrade implements Update {
 		if (!needToProcess()) {
 			return;
 		}
-		for (BuildInformation buildInformation : this.buildsToRevert) {
-			if(buildsInformation.contains(buildInformation.getBuild())) {
-				int index = buildsInformation.indexOf(buildInformation.getBuild());
-				Build buildToRevert = buildsInformation.get(index);
-				List<Step> steps = buildToRevert.getSteps();
+		for (BuildInformation buildInformationToRevert : this.buildsInformationToRevert) {
+			if(buildsFromXML.contains(buildInformationToRevert.getBuild())) {
+				int index = buildsFromXML.indexOf(buildInformationToRevert.getBuild());
+				Build buildToRevertFromXML = buildsFromXML.get(index);
+				List<Step> steps = buildToRevertFromXML.getSteps();
 				int numberOfSteps = steps.size();
 				int stepsExecuted = 0;
 				try {
-					
 					for (int i = numberOfSteps -1; i > -1; i--) {
 						Step step = steps.get(i);
 						if(step.getDowngradeAction().isPresent())
 							step.getDowngradeAction().get().execute(entityManager);
 						stepsExecuted ++;
 					}
-					buildInformationDao.delete(buildInformation);
-					System.out.println("Downgrade Build: " + buildToRevert.toString());
+					buildInformationDao.delete(buildInformationToRevert);
+					System.out.println("Downgrade Build: " + buildToRevertFromXML.toString());
 				} catch (Exception e) {
-					System.out.println("Downgrade Build execution error:" + buildInformation);
+					System.out.println("Downgrade Build execution error:" + buildInformationToRevert);
 					e.printStackTrace();
 					int numberOfRemainingSteps = numberOfSteps - stepsExecuted;
 					if(numberOfRemainingSteps > 0) {
-						buildInformationDao.updateRemainingSteps(buildInformation, numberOfRemainingSteps);
+						buildInformationDao.updateRemainingSteps(buildInformationToRevert, numberOfRemainingSteps);
 					}						
 					return;
 				}
@@ -79,18 +78,12 @@ public class Downgrade implements Update {
 	private boolean needToProcess() {
 		return outOfDate() && hasBuildsToRevert();
 	}
+	
+	private boolean outOfDate() {
+		return !lastBuildApplied.equals(downgradeBuild);
+	}
 
 	private boolean hasBuildsToRevert() {
-		return !this.buildsToRevert.isEmpty();
+		return !this.buildsInformationToRevert.isEmpty();
 	}
-
-	private boolean outOfDate() {
-		if(lastBuildApplied.equals(appliedBuilds))
-			return false;
-		
-		return true;
-	}
-	
-	
-
 }

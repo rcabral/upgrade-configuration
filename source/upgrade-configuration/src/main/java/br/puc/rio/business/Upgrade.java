@@ -21,9 +21,9 @@ public class Upgrade implements Update {
 	private List<Build> builds;
 	private Index index;
 
-	public Upgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager) {
+	public Upgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
-		this.buildInformationDao = new BuildInformationDao(entityManager);
+		this.buildInformationDao = buildInformationDao;
 		this.lastBuildInformation = buildInformationDao.getLastBuildInformation();
 		this.lastAppliedBuild = getLastAppliedBuild(lastBuildInformation);
 		this.builds = upgradeConfiguration.getBuilds();
@@ -79,7 +79,7 @@ public class Upgrade implements Update {
 	}
 
 	private boolean hasBuildsToApply() {
-		return this.builds != null && !this.builds.isEmpty();
+		return !this.builds.isEmpty();
 	}
 
 	private boolean biggerThanLastAppliedBuild() {

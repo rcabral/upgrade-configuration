@@ -20,7 +20,7 @@ public class Build implements Comparable<Build> {
 	private String buildNumber;
 	@XStreamAsAttribute
 	private int buildSequence;
-	List<Step> steps = new ArrayList<>();
+	private List<Step> steps;
 	private String message;
 	@XStreamAsAttribute
 	@XStreamConverter(value=BooleanConverter.class, booleans={false}, strings={"true", "false"})
@@ -36,6 +36,20 @@ public class Build implements Comparable<Build> {
 		this.buildSequence = buildSequence;
 		this.steps = steps;
 		this.message = message;
+		this.downgrade = false;
+	}
+	
+	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
+			List<Step> steps, String message, boolean downgrade) {
+		super();
+		this.majorVersion = majorVersion;
+		this.minorVersion = minorVersion;
+		this.releaseVersion = releaseVersion;
+		this.buildNumber = buildNumber;
+		this.buildSequence = buildSequence;
+		this.steps = steps;
+		this.message = message;
+		this.downgrade = downgrade;
 	}
 	
 	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence) {
@@ -45,8 +59,22 @@ public class Build implements Comparable<Build> {
 		this.releaseVersion = releaseVersion;
 		this.buildNumber = buildNumber;
 		this.buildSequence = buildSequence;
+		this.steps = new ArrayList<>();
+		this.downgrade = false;
 	}
 	
+	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
+			boolean downgrade) {
+		super();
+		this.majorVersion = majorVersion;
+		this.minorVersion = minorVersion;
+		this.releaseVersion = releaseVersion;
+		this.buildNumber = buildNumber;
+		this.buildSequence = buildSequence;
+		this.steps = new ArrayList<>();
+		this.downgrade = downgrade;
+	}
+
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this).append("majorVersion", majorVersion).append("minorVersion", minorVersion)

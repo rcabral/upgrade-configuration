@@ -53,6 +53,17 @@ public class UpgradeTest {
 		upgrade.execute();
 	}
 	
+	
+	@Test(expected = Test.None.class)
+	public final void testExecuteWhenLastBuildInformationIsNull() {
+
+		Mockito.when(buildInformationDao.getLastBuildInformation()).thenReturn(null);		
+		Mockito.when(upgradeConfiguration.getBuilds()).thenReturn(new ArrayList<Build>());
+		
+		upgrade = new Upgrade(upgradeConfiguration, entityManager, buildInformationDao);
+		upgrade.execute();
+	}
+	
 	@Test(expected = Test.None.class)
 	public final void testExecuteWhenHasBuilsToAppyButStepIsEmpty() {
 		BuildInformation buildInformation = buildInformationTest.getBuildInformation();

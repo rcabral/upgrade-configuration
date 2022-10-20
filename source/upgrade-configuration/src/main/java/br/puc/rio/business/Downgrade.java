@@ -20,9 +20,9 @@ public class Downgrade implements Update {
 	private List<Build> buildsFromXML;
 	private List<BuildInformation> buildsInformationToRevert;
 
-	public Downgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager) {
+	public Downgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
-		this.buildInformationDao = new BuildInformationDao(entityManager);
+		this.buildInformationDao = buildInformationDao;
 		this.appliedBuildsInformation = buildInformationDao.getAppliedBuilds();
 		this.lastBuildApplied = buildInformationDao.getLastBuildInformation().getBuild();
 		this.downgradeBuild = upgradeConfiguration.getDowngradeBuild().get();

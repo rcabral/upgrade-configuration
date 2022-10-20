@@ -144,6 +144,14 @@ public class BuildTest {
 		return builds;
 	}
 	
+	public Build getLastBuildInformation(){
+		return new Build(6, 0, 0, "010122", 0);
+	}
+	
+	public Build getBuild() {
+		return build;
+	}
+
 	public List<Build> getBuildsWithOneDowngrade(){
 		List<Build> builds = new ArrayList<>();
 		builds.add(new Build(1, 0, 0, "010122", 0));

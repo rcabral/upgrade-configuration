@@ -9,7 +9,7 @@ public interface Update {
 	public void execute();
 	public static Update create(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		if(upgradeConfiguration.isDowngrade()) {
-			return new Downgrade(upgradeConfiguration, entityManager);
+			return new Downgrade(upgradeConfiguration, entityManager, buildInformationDao);
 		}
 		return new Upgrade(upgradeConfiguration, entityManager,buildInformationDao);
 	}

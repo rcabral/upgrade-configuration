@@ -1,6 +1,7 @@
 package br.puc.rio.model;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Index {
 	private final int build;
@@ -9,10 +10,10 @@ public class Index {
 	public Index(List<Build> builds, BuildInformation lastBuildInformation) {
 		int buildIndex = 0;
 		int stepIndex = 0;
-		Build lastBuildApplied = lastBuildInformation.getBuild();
-
-		if (lastBuildApplied != null && builds.contains(lastBuildApplied)) {
-			buildIndex = builds.indexOf(lastBuildApplied);
+		Optional<Build> lastBuildApplied = getLastBuildApplied(lastBuildInformation);
+						
+		if (lastBuildApplied.isPresent() && builds.contains(lastBuildApplied.get())) {
+			buildIndex = builds.indexOf(lastBuildApplied.get());
 			if (lastBuildInformation.getStatus() == Status.COMPLETE) {
 				buildIndex++;
 			} else {
@@ -22,6 +23,13 @@ public class Index {
 		
 		build = buildIndex;
 		step = stepIndex;
+	}
+
+	private Optional<Build> getLastBuildApplied(BuildInformation lastBuildInformation) {
+		if(lastBuildInformation != null) {
+			return Optional.of(lastBuildInformation.getBuild());
+		}
+		return Optional.empty();
 	}
 
 	public int getBuild() {

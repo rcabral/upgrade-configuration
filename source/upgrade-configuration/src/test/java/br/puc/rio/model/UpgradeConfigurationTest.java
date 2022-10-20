@@ -20,16 +20,13 @@ public class UpgradeConfigurationTest {
 
 	@Test
 	public final void testIsDowngrade() {
-		List<Build> builds = buildTest.getBuildsWithOneDowngrade();
-				
-		UpgradeConfiguration upgrade = new UpgradeConfiguration(builds);
+		UpgradeConfiguration upgrade = getUpgradeDowngradeConfiguration();
 		assertTrue(upgrade.isDowngrade());
 	}
-	
+
 	@Test
 	public final void testIsNotDowngrade() {
-		List<Build> builds = buildTest.getBuilds();
-		UpgradeConfiguration upgrade = new UpgradeConfiguration(builds);
+		UpgradeConfiguration upgrade = getUpgradeConfiguration();
 		assertFalse(upgrade.isDowngrade());
 	}
 
@@ -42,14 +39,22 @@ public class UpgradeConfigurationTest {
 		UpgradeConfiguration upgrade = new UpgradeConfiguration(builds);
 		assertEquals(downgradeBuild, upgrade.getDowngradeBuild().get());
 	}
-
-	
 	
 	@Test
 	public final void testGetBuilds() {
 		List<Build> builds = buildTest.getBuilds();
 		UpgradeConfiguration upgrade = new UpgradeConfiguration(builds);
 		assertEquals(builds,upgrade.getBuilds());
+	}
+	
+	public UpgradeConfiguration getUpgradeConfiguration() {
+		List<Build> builds = buildTest.getBuilds();
+		return new UpgradeConfiguration(builds);
+	}
+	
+	public UpgradeConfiguration getUpgradeDowngradeConfiguration() {
+		List<Build> builds = buildTest.getBuildsWithOneDowngrade();
+ 		return new UpgradeConfiguration(builds);
 	}
 
 }

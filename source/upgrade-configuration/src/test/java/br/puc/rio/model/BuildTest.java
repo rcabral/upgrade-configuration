@@ -2,7 +2,6 @@ package br.puc.rio.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,36 +31,6 @@ public class BuildTest {
 		message = "Hello Build!";
 		downgrade = false;
 		build = new Build(majorVersion , minorVersion, releaseVersion,  buildNumber, buildSequence,steps,message,downgrade);
-	}
-
-	@Test
-	public final void testHashCode() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testBuildIntIntIntStringIntListOfStepString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testBuildIntIntIntStringInt() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testBuildIntIntIntStringIntBoolean() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testToString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testCompareToBuild() {
-		fail("Not yet implemented"); // TODO
 	}
 
 	@Test

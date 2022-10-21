@@ -50,4 +50,9 @@ public class RunSQLActionTest {
 		action.execute(entityManager);
 	}
 
+	public RunSQLAction getAction() {
+		return action;
+	}
+
+
 }

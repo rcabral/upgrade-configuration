@@ -1,52 +1,62 @@
 package br.puc.rio.model;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
-class StepTest {
-
-	@Test
-	final void testHashCode() {
-		fail("Not yet implemented"); // TODO
+@RunWith(MockitoJUnitRunner.class)
+public class StepTest {
+	
+	private Step step;
+	private Step otherStep;
+	private int number;
+	@Mock
+	private Action upgrade;
+	@Mock
+	private Action downgrade;
+	
+	@Before
+	public void setUp() {
+		number = 1;
+		step = new Step(number,upgrade,downgrade);
+		otherStep = new Step(number,upgrade, downgrade);
 	}
 
 	@Test
-	final void testStep() {
-		fail("Not yet implemented"); // TODO
+	public final void testEqualsObject() {
+		assertTrue(step.equals(otherStep));
 	}
 
 	@Test
-	final void testEqualsObject() {
-		fail("Not yet implemented"); // TODO
+	public final void testCompareTo() { 
+		assertEquals(0, step.compareTo(otherStep));
 	}
 
 	@Test
-	final void testCompareTo() {
-		fail("Not yet implemented"); // TODO
+	public final void testGetNumber() {
+		assertEquals(number, step.getNumber());
 	}
 
 	@Test
-	final void testGetNumber() {
-		fail("Not yet implemented"); // TODO
+	public final void testGetUpgradeAction() {
+		assertEquals(upgrade, step.getUpgradeAction());
 	}
 
 	@Test
-	final void testGetUpgradeAction() {
-		fail("Not yet implemented"); // TODO
+	public final void testGetDowngradeAction() {
+		assertEquals(downgrade, step.getDowngradeAction().get());
 	}
 
 	@Test
-	final void testGetDowngradeAction() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	final void testToString() {
-		fail("Not yet implemented"); // TODO
+	public final void testToString() {
+		assertTrue(step.toString().contains("number=" + number));
 	}
 	
 	public static List<Step> getSteps() {

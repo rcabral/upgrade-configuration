@@ -50,4 +50,8 @@ public class RunSQLFileActionTest {
 		action.execute(entityManager);
 	}
 
+	public RunSQLFileAction getAction() {
+		return action;
+	}
+
 }

@@ -1,6 +1,7 @@
 package br.puc.rio.sample;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -34,9 +35,15 @@ public class HelloCustomActionTest {
 	    helloCustomAction();
 	    assertEquals("Hello Custom Action!", outContent.toString());
 	}
+	
+	@Test
+	public void createNewHelloCustomActionTest() {
+	    assertTrue(new HelloCustomAction() instanceof HelloCustomAction);
+	}
 
 	private void helloCustomAction() {
 		HelloCustomAction.main(new String[] {});
 	}
+	
 
 }

@@ -1,9 +1,9 @@
 package br.puc.rio.model;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 import java.util.regex.Pattern;
 
 import org.junit.Before;
@@ -14,7 +14,10 @@ public class BuildInformationTest {
 	private BuildTest buildCreator;
 	private int steps = 0;
 	private Status status = Status.COMPLETE;
+	private Build build;
+	private Build otherBuild;
 	private BuildInformation buildInformation;
+	private BuildInformation otherBuildInformation;
 
 	
 	
@@ -23,33 +26,16 @@ public class BuildInformationTest {
 		buildCreator = new BuildTest();
 		buildCreator.setUp();
 		
-		Build build = buildCreator.getBuild();
+		build = buildCreator.getBuild();
+		otherBuild = buildCreator.getBuild();
+		
 		buildInformation = new BuildInformation(build,steps,status);
+		otherBuildInformation = new BuildInformation(otherBuild,steps,status);
 	}
 
 	@Test
 	public final void testHashCode() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testBuildInformation() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testBuildInformationBuildIntStatus() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testBuildInformationBuild() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetBuild() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(buildInformation.hashCode(), otherBuildInformation.hashCode());
 	}
 
 	@Test
@@ -61,36 +47,6 @@ public class BuildInformationTest {
 
 	private boolean validadeUUID(String id) {
 		return Pattern.matches("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$", id);
-	}
-
-	@Test
-	public final void testGetMajorVersion() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetMinorVersion() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetReleaseVersion() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetBuildNumber() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetBuildSequence() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testGetSteps() {
-		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
@@ -110,22 +66,22 @@ public class BuildInformationTest {
 
 	@Test
 	public final void testToString() {
-		fail("Not yet implemented"); // TODO
+		assertTrue(buildInformation.toString() instanceof String);
 	}
 
 	@Test
 	public final void testCompareToBuildInformation() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(0,buildInformation.compareTo(otherBuildInformation));
 	}
 
 	@Test
 	public final void testCompareToBuild() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(0,buildInformation.compareTo(build));
 	}
 
 	@Test
 	public final void testEqualsObject() {
-		fail("Not yet implemented"); // TODO
+		assertTrue(buildInformation.equals(otherBuildInformation));
 	}
 	
 	public BuildInformation getBuildInformation(){

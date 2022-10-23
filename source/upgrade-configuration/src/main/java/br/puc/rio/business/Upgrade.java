@@ -23,7 +23,7 @@ public class Upgrade implements Update {
 
 	public Upgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
-		this.buildInformationDao = buildInformationDao;
+		this.buildInformationDao = buildInformationDao; 
 		this.lastBuildInformation = buildInformationDao.getLastBuildInformation();
 		this.lastAppliedBuild = getLastAppliedBuild(lastBuildInformation);
 		this.builds = upgradeConfiguration.getBuilds();
@@ -71,7 +71,7 @@ public class Upgrade implements Update {
 			}
 
 		}
-		entityManager.close();
+		entityManager.close(); 
 	}
 
 	private boolean needToProcess() {

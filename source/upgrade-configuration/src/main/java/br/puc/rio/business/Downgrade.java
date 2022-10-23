@@ -28,7 +28,7 @@ public class Downgrade implements Update {
 		this.downgradeBuild = upgradeConfiguration.getDowngradeBuild().get();
 		this.buildsFromXML = upgradeConfiguration.getBuilds();
 		this.buildsInformationToRevert = getBuildsInformationToRevert(this.appliedBuildsInformation, this.downgradeBuild );
-	}
+	} 
 
 	private List<BuildInformation> getBuildsInformationToRevert(List<BuildInformation> appliedBuilds, Build downgradeBuild){
 		List<BuildInformation> buildsToRevert = new ArrayList<>();

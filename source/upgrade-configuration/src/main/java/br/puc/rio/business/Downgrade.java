@@ -36,9 +36,9 @@ public class Downgrade implements Update {
 
 	private List<BuildInformation> getBuildsInformationToRevert(List<BuildInformation> appliedBuilds, Build downgradeBuild){
 		List<BuildInformation> buildsToRevert = new ArrayList<>();
-		if(this.appliedBuildsInformation.contains(new BuildInformation(downgradeBuild))){
-			for (int i = 0; i < this.appliedBuildsInformation.size() && downgradeBuild.compareTo(this.appliedBuildsInformation.get(i)) < 0 ; i++) {
-				BuildInformation build = this.appliedBuildsInformation.get(i);
+		if(appliedBuilds.contains(new BuildInformation(downgradeBuild))){
+			for (int i = 0; i < appliedBuilds.size() && downgradeBuild.compareTo(appliedBuilds.get(i)) < 0 ; i++) {
+				BuildInformation build = appliedBuilds.get(i);
 				buildsToRevert.add(build);
 			}
 		}

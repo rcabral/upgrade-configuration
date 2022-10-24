@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import br.puc.rio.dao.BuildInformationDao;
 import br.puc.rio.model.Build;
 import br.puc.rio.model.BuildInformation;
@@ -19,6 +22,7 @@ public class Downgrade implements Update {
 	private Build downgradeBuild;
 	private List<Build> buildsFromXML;
 	private List<BuildInformation> buildsInformationToRevert;
+	private static final Logger logger = LogManager.getLogger(Downgrade.class);
 
 	public Downgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
@@ -61,9 +65,9 @@ public class Downgrade implements Update {
 						stepsExecuted ++;
 					}
 					buildInformationDao.delete(buildInformationToRevert);
-					System.out.println("Downgrade Build: " + buildToRevertFromXML.toString());
+					logger.info("Downgrade Build: " + buildToRevertFromXML.toString());
 				} catch (Exception e) {
-					System.out.println("Downgrade Build execution error:" + buildInformationToRevert);
+					logger.error("Downgrade Build execution error:" + buildInformationToRevert);
 					e.printStackTrace();
 					int numberOfRemainingSteps = numberOfSteps - stepsExecuted;
 					if(numberOfRemainingSteps > 0) {

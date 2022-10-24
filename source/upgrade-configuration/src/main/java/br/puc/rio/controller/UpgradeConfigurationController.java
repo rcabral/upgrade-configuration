@@ -5,6 +5,9 @@ import java.io.FileReader;
 
 import javax.persistence.EntityManager;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import com.thoughtworks.xstream.XStream;
 
 import br.puc.rio.business.Update;
@@ -14,8 +17,10 @@ import br.puc.rio.util.JPAUtil;
 
 public class UpgradeConfigurationController {
 	
+	private static final Logger logger = LogManager.getLogger(UpgradeConfigurationController.class);  
+	
 	public static void execute() throws FileNotFoundException {
-		System.out.println("Begin");
+		logger.info("Begin");
 		EntityManager entityManager = JPAUtil.createEntityManager();
 		FileReader fileReader = new FileReader("upgrade-configuration.xml");
 		XStream xStream = new XStream();
@@ -25,7 +30,7 @@ public class UpgradeConfigurationController {
 		BuildInformationDao buildInformationDao = new BuildInformationDao(entityManager);
 		Update update = Update.create(upgradeConfiguration,entityManager,buildInformationDao);
 		update.execute();
-		System.out.println("End");
+		logger.info("End");
 	}
 
 	

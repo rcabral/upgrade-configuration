@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import br.puc.rio.dao.BuildInformationDao;
 import br.puc.rio.model.Build;
 import br.puc.rio.model.BuildInformation;
@@ -20,6 +23,7 @@ public class Upgrade implements Update {
 	private Build lastAppliedBuild;
 	private List<Build> builds;
 	private Index index;
+	private static final Logger logger = LogManager.getLogger(Upgrade.class);
 
 	public Upgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
@@ -61,9 +65,9 @@ public class Upgrade implements Update {
 				if(appiedBuild.isPresent())
 					buildInformationDao.delete(appiedBuild.get());
 				buildInformationDao.persist(new BuildInformation(build, build.getSteps().size(), Status.COMPLETE));
-				System.out.println("Upgrade Message: " + build.getMessage());
+				logger.info("Upgrade Message: " + build.getMessage());
 			} catch (Exception e) {
-				System.out.println("Upgrade Build execution error:" + build + " " + "Step:" + lastStepExecuted.getNumber());
+				logger.error("Upgrade Build execution error:" + build + " " + "Step:" + lastStepExecuted.getNumber());
 				e.printStackTrace();
 				if (countSteps > 0)
 					buildInformationDao.persist(new BuildInformation(build, countSteps, Status.PARCIAL));

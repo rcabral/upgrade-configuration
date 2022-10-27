@@ -237,7 +237,7 @@ public class Build implements Comparable<Build> {
 	}
 	
 	/**
-	 * @return true if the is downgrade build and false otherwise. 
+	 * @return true if is downgrade build and false otherwise. 
 	 */
 	public boolean isDowngrade() {
 		return downgrade;

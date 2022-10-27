@@ -357,7 +357,7 @@
     <message>UpgradeConfiguration version 8.0.0.180122</message>
   </build> 
   
-  <build majorVersion="14" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0" downgrade = "true">
+  <build majorVersion="14" minorVersion="0" releaseVersion="0" buildNumber="180122" buildSequence="0" downgrade = "false">
     <steps>
       <Step number="0">
         <upgrade class="br.puc.rio.model.RunSQLAction">
@@ -566,7 +566,4 @@
     </steps>
     <message>UpgradeConfiguration version 25.0.0.101022</message>
   </build>
-  
-  
-  
 </UpgradeConfiguration>

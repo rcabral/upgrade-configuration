@@ -11,7 +11,7 @@ public class RunSQLAction implements Action{
 	private String sql;
 	
 	/**
-	 * @param sql - script sql
+	 * @param sql - SQL Script
 	 */
 	public RunSQLAction(String sql) {
 		super();

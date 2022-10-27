@@ -7,6 +7,9 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="steps">
+              	<xs:annotation>
+					<xs:documentation>List of Steps</xs:documentation>
+				</xs:annotation>
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element maxOccurs="unbounded" name="Step">
@@ -15,17 +18,38 @@
                           <xs:element name="upgrade">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element minOccurs="0" name="path" type="xs:string" />
-                                <xs:element minOccurs="0" name="className" type="xs:string" />
-                                <xs:element minOccurs="0" name="sql" type="xs:string" />
+                                <xs:element minOccurs="0" name="path" type="xs:string">
+                                	<xs:annotation>
+                              			<xs:documentation>Path to the SQL Script File.</xs:documentation>
+                              		</xs:annotation>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="className" type="xs:string">
+                                	<xs:annotation>
+                              			<xs:documentation>Class Name that implements the a Custom action.</xs:documentation>
+                              		</xs:annotation>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="sql" type="xs:string">
+                                	<xs:annotation>
+                              			<xs:documentation>SQL Script</xs:documentation>
+                              		</xs:annotation>
+                                </xs:element>
                               </xs:sequence>
-                              <xs:attribute name="class" type="xs:string" use="required" />
+                              <xs:attribute name="class" type="xs:string" use="required">
+                              	<xs:annotation>
+                              			<xs:documentation>Class that implements Action</xs:documentation>
+                              		</xs:annotation>
+                              </xs:attribute>
                             </xs:complexType>
                           </xs:element>
                           <xs:element minOccurs="0" name="downgrade">
                             <xs:complexType>
                               <xs:sequence>
                                 <xs:element minOccurs="0" name="path" type="xs:string" />
+                                <xs:element minOccurs="0" name="className" type="xs:string">
+                                	<xs:annotation>
+                              			<xs:documentation>Class Name that implements the Downgrade action.</xs:documentation>
+                              		</xs:annotation>
+                                </xs:element>
                                 <xs:element minOccurs="0" name="sql" type="xs:string" />
                               </xs:sequence>
                               <xs:attribute name="class" type="xs:string" use="required" />
@@ -45,7 +69,11 @@
             <xs:attribute name="releaseVersion" type="xs:unsignedByte" use="required" />
             <xs:attribute name="buildNumber" type="xs:unsignedInt" use="required" />
             <xs:attribute name="buildSequence" type="xs:unsignedByte" use="required" />
-            <xs:attribute name="downgrade" type="xs:boolean" use="optional" />
+            <xs:attribute name="downgrade" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>true if the is downgrade build and false otherwise.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
           </xs:complexType>
         </xs:element>
       </xs:sequence>

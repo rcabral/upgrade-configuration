@@ -14,33 +14,70 @@ import br.puc.rio.model.BuildInformation;
 import br.puc.rio.model.Status;
 
 
-
+/**
+ * 
+ * Class used to allow the persistence of the BuildInformation instance.
+ *
+ */
 public class BuildInformationDao {
 	
 	private final EntityManager em;
-
+	
+	/**
+	 * Constructor Method
+	 * @param em
+	 */
 	public BuildInformationDao (EntityManager em) {
 		this.em = em;
 	}
 	
+	/**
+	 * Persist a buildInformation.
+	 * @param buildInformation
+	 */
 	public void persist(BuildInformation buildInformation) {
 		em.getTransaction().begin();
 		em.persist(buildInformation);
 		em.getTransaction().commit();
 	}
 	
+	/**
+	 * Merge a buildInformation.
+	 * @param buildInformation
+	 */
 	public void merge(BuildInformation buildInformation) {
 		em.getTransaction().begin();
 		em.merge(buildInformation);
 		em.getTransaction().commit();
 	}
 	
+	/**
+	 * Delete a buildInformation.
+	 * @param buildInformation
+	 */
 	public void delete(BuildInformation buildInformation) {
 		em.getTransaction().begin();
 		em.remove(buildInformation);
 		em.getTransaction().commit();
 	}
-		
+	
+	/**
+	 * Returns the last applied Build.
+	 * @return Build
+	 */
+	public Build getLastBuild() {
+		BuildInformation lastBuildInformation = getLastBuildInformation();
+		if(lastBuildInformation!=null) {
+			return lastBuildInformation.getBuild();
+		}else {
+			return null;
+		}
+	}
+	
+	/**
+	 * Returns the last applied buildInformation.
+	 * @return BuildInformation
+	 */
 	public BuildInformation getLastBuildInformation() {
 		try {
 			StringBuilder sql = new StringBuilder();
@@ -52,11 +89,21 @@ public class BuildInformationDao {
 		}
 	}
 	
+	/**
+	 * Return a BuildInformation from a instance of a Build applied.
+	 * @param build
+	 * @return BuildInformation
+	 */
 	public Optional<BuildInformation> getBuildInformation(Build build) {
 		return getBuildInformation(new BuildInformation(build));
 	}
 	
-	public Optional<BuildInformation> getBuildInformation(BuildInformation build) {
+	/**
+	 * Return a BuildInformation from a instance of a BuildInformation applied.
+	 * @param buildInformation
+	 * @return BuildInformation
+	 */
+	public Optional<BuildInformation> getBuildInformation(BuildInformation buildInformation) {
 		try {
 			StringBuilder sql = new StringBuilder();
 			sql.append("from BuildInformation ");
@@ -67,17 +114,21 @@ public class BuildInformationDao {
 			sql.append(" and  buildNumber = :buildNumber ");
 			sql.append(" and  buildSequence = :buildSequence ");
 			TypedQuery<BuildInformation> query = em.createQuery(sql.toString(),BuildInformation.class);
-			query.setParameter("majorVersion", build.getMajorVersion());
-			query.setParameter("minorVersion", build.getMinorVersion() );
-			query.setParameter("releaseVersion", build.getReleaseVersion());
-			query.setParameter("buildNumber", build.getBuildNumber());
-			query.setParameter("buildSequence", build.getBuildSequence());
+			query.setParameter("majorVersion", buildInformation.getMajorVersion());
+			query.setParameter("minorVersion", buildInformation.getMinorVersion() );
+			query.setParameter("releaseVersion", buildInformation.getReleaseVersion());
+			query.setParameter("buildNumber", buildInformation.getBuildNumber());
+			query.setParameter("buildSequence", buildInformation.getBuildSequence());
 			return Optional.of(query.setMaxResults(1).getSingleResult());
 		} catch (NoResultException e) {
 			return Optional.empty();
 		}
 	}
 	
+	/**
+	 * Get a list of all BuildInformations applied.
+	 * @return List<BuildInformation>
+	 */
 	public List<BuildInformation> getAppliedBuilds() {
 		StringBuilder sql = new StringBuilder();
 		sql.append("from BuildInformation ");
@@ -85,15 +136,12 @@ public class BuildInformationDao {
 		return em.createQuery(sql.toString(),BuildInformation.class).getResultList();
 	}
 	
-	public Build getLastBuild() {
-		BuildInformation lastBuildInformation = getLastBuildInformation();
-		if(lastBuildInformation!=null) {
-			return lastBuildInformation.getBuild();
-		}else {
-			return null;
-		}
-	}
 	
+	/**
+	 * Update remaining steps from a BuildInformation.
+	 * @param buildInformation
+	 * @param steps
+	 */
 	public void updateRemainingSteps(BuildInformation buildInformation, int steps) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" update BuildInformation  ");

@@ -4,6 +4,11 @@ import java.lang.reflect.Method;
 
 import javax.persistence.EntityManager;
 
+/**
+ * 
+ * Class that implements the Custom Action.
+ *
+ */
 public class CustomAction implements Action {
 	private String className;
 
@@ -11,12 +16,13 @@ public class CustomAction implements Action {
 		super();
 		this.className = className;
 	}
-
+	
 	@Override
 	public ActionType getActionType() {
 		return ActionType.CUSTOM;
 	}
-
+	
+	
 	@Override
 	public void execute(EntityManager entityManager) throws Exception {
 		Class<?> cls = Class.forName(className);

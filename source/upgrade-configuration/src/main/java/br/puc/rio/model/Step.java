@@ -8,6 +8,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
+/**
+ * 
+ * Class that implements a Step of a Build.
+ *
+ */
 @XStreamAlias("Step")
 public class Step implements Comparable<Step> {
 	
@@ -17,7 +22,13 @@ public class Step implements Comparable<Step> {
 	private Action upgradeAction;
 	@XStreamAlias("downgrade")
 	private Action downgradeAction;
-
+	
+	/**
+	 * Class that implements a Step of a Build.
+	 * @param number - A sequencial number of a Step.
+	 * @param upgrade - upgrade action
+	 * @param downgrade - downgrade action
+	 */
 	public Step(int number, Action upgrade, Action downgrade) {
 		this.number = number;
 		this.upgradeAction = upgrade;
@@ -50,7 +61,11 @@ public class Step implements Comparable<Step> {
 	public int compareTo(final Step otherStep) {
 		return new CompareToBuilder().append(number, otherStep.number).toComparison();
 	}
-
+	
+	/**
+	 * Get Number of Step.
+	 * @return int - Number of Step
+	 */
 	public int getNumber() {
 		return number;
 	}

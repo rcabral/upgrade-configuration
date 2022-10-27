@@ -11,6 +11,12 @@ import javax.persistence.Id;
 import org.apache.commons.lang.builder.CompareToBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
+/**
+ * 
+ * Class that implements a Build Information.
+ * This class is persisted in the database to mark applied builds.
+ * 
+ */
 @Entity
 public class BuildInformation {
 	@Id
@@ -24,10 +30,19 @@ public class BuildInformation {
 	private LocalDateTime upgradeDate;
 	@Enumerated(EnumType.STRING)
 	private Status status;
-		
+	
+	/**
+	 * Constructor Method.
+	 */
 	public BuildInformation() {
 	}
-
+	
+	/**
+	 * Constructor Method.
+	 * @param build
+	 * @param steps
+	 * @param status
+	 */
 	public BuildInformation(Build build,int steps,Status status) {
 		this.id = UUID.randomUUID().toString();
 		this.majorVersion = build.getMajorVersion();
@@ -40,6 +55,10 @@ public class BuildInformation {
 		this.status = status;
 	}
 	
+	/**
+	 * Constructor Method.
+	 * @param build
+	 */
 	public BuildInformation(Build build) {
 		this.id = UUID.randomUUID().toString();
 		this.majorVersion = build.getMajorVersion();
@@ -50,42 +69,82 @@ public class BuildInformation {
 		this.upgradeDate = LocalDateTime.now();
 	}
 	
+	/**
+	 * Get Build.
+	 * @return Build.
+	 */
 	public Build getBuild() {
 		return new Build(majorVersion, minorVersion, releaseVersion, buildNumber, buildSequence);
 	}
-
+	
+	/**
+	 * Get id.
+	 * @return String
+	 */
 	public String getId() {
 		return id;
 	}
-
+	
+	/**
+	 * Get Major Version.
+	 * @return int
+	 */
 	public int getMajorVersion() {
 		return majorVersion;
 	}
-
+	
+	/**
+	 * Get Minot Version.
+	 * @return int
+	 */
 	public int getMinorVersion() {
 		return minorVersion;
 	}
-
+	
+	/**
+	 * Get Release Version.
+	 * @return
+	 */
 	public int getReleaseVersion() {
 		return releaseVersion;
 	}
-
+	
+	/**
+	 * Get Build Number.
+	 * @return String.
+	 */
 	public String getBuildNumber() {
 		return buildNumber;
 	}
-
+	
+	/**
+	 * Get Build Sequence.
+	 * @return int
+	 */
 	public int getBuildSequence() {
 		return buildSequence;
 	}
-
+	
+	/**
+	 * Get number of Steps.
+	 * @return int 
+	 */
 	public int getSteps() {
 		return steps;
 	}
-
+	
+	/**
+	 * Get the Build application date.
+	 * @return LocalDateTime
+	 */
 	public LocalDateTime getUpgradeDate() {
 		return upgradeDate;
 	}
-
+	
+	/**
+	 * Get Status
+	 * @return Status
+	 */
 	public Status getStatus() {
 		return status;
 	}
@@ -96,13 +155,23 @@ public class BuildInformation {
 				.append("releaseVersion", releaseVersion).append("buildNumber", buildNumber)
 				.append("buildSequence", buildSequence).append("steps", steps).append("upgradeDate",upgradeDate).append("status",status).toString();
 	}
-
+	
+	/**
+	 * @param  other BuildInformation to be compared.
+     * @return  a negative integer, zero, or a positive integer as this object
+     *          is less than, equal to, or greater than the specified object.
+	 */	
 	public int compareTo(final BuildInformation otherBuildInformation) {
 		return new CompareToBuilder().append(majorVersion, otherBuildInformation.majorVersion).append(minorVersion, otherBuildInformation.minorVersion)
 				.append(releaseVersion, otherBuildInformation.releaseVersion).append(buildNumber, otherBuildInformation.buildNumber)
 				.append(buildSequence, otherBuildInformation.buildSequence).toComparison();
 	}
 	
+	/**
+	 * @param  other Build to be compared.
+     * @return  a negative integer, zero, or a positive integer as this object
+     *          is less than, equal to, or greater than the specified object.
+	 */	
 	public int compareTo(final Build build) {
 		return new CompareToBuilder().append(majorVersion, build.getMajorVersion()).append(minorVersion, build.getMinorVersion())
 				.append(releaseVersion, build.getReleaseVersion()).append(buildNumber, build.getBuildNumber())

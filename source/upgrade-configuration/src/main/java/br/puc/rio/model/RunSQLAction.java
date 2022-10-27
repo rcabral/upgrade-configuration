@@ -2,9 +2,17 @@ package br.puc.rio.model;
 
 import javax.persistence.EntityManager;
 
+/**
+ * 
+ * Class that implements the Run SQL Action.
+ *
+ */
 public class RunSQLAction implements Action{
 	private String sql;
-		
+	
+	/**
+	 * @param sql - script sql
+	 */
 	public RunSQLAction(String sql) {
 		super();
 		this.sql = sql;

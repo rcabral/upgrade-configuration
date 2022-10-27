@@ -9,6 +9,11 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.converters.basic.BooleanConverter;
 
+/**
+ * 
+ * Class that implements a Build.
+ *
+ */
 public class Build implements Comparable<Build> {
 	@XStreamAsAttribute
 	private int majorVersion;
@@ -25,7 +30,17 @@ public class Build implements Comparable<Build> {
 	@XStreamAsAttribute
 	@XStreamConverter(value=BooleanConverter.class, booleans={false}, strings={"true", "false"})
 	private boolean downgrade;
-		
+	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 * @param steps
+	 * @param message
+	 */
 	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
 			List<Step> steps, String message) {
 		super();
@@ -39,6 +54,17 @@ public class Build implements Comparable<Build> {
 		this.downgrade = false;
 	}
 	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 * @param steps
+	 * @param message
+	 * @param downgrade
+	 */
 	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
 			List<Step> steps, String message, boolean downgrade) {
 		super();
@@ -52,6 +78,14 @@ public class Build implements Comparable<Build> {
 		this.downgrade = downgrade;
 	}
 	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 */
 	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence) {
 		super();
 		this.majorVersion = majorVersion;
@@ -63,6 +97,15 @@ public class Build implements Comparable<Build> {
 		this.downgrade = false;
 	}
 	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 * @param downgrade
+	 */
 	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
 			boolean downgrade) {
 		super();
@@ -89,6 +132,11 @@ public class Build implements Comparable<Build> {
 				.append(buildSequence, otherBuild.buildSequence).toComparison();
 	}
 	
+	/**
+	 * @param  buildInformation to be compared.
+     * @return  a negative integer, zero, or a positive integer as this object
+     *          is less than, equal to, or greater than the specified object.
+	 */
 	public int compareTo(final BuildInformation buildInformation) {
 		return new CompareToBuilder().append(majorVersion, buildInformation.getMajorVersion()).append(minorVersion, buildInformation.getMinorVersion())
 				.append(releaseVersion, buildInformation.getReleaseVersion()).append(buildNumber, buildInformation.getBuildNumber())
@@ -132,34 +180,65 @@ public class Build implements Comparable<Build> {
 		return true;
 	}
 	
+	/**
+	 * Get list of Steps.
+	 * @return List<Step>
+	 */
 	public List<Step> getSteps() {
 		return steps;
 	}
-
+	
+	/**
+	 * Get Major Version.
+	 * @return int
+	 */
 	public int getMajorVersion() {
 		return majorVersion;
 	}
-
+	
+	/**
+	 * Get Minot Version.
+	 * @return int
+	 */
 	public int getMinorVersion() {
 		return minorVersion;
 	}
-
+	
+	/**
+	 * Get Release Version.
+	 * @return
+	 */
 	public int getReleaseVersion() {
 		return releaseVersion;
 	}
-
+	
+	/**
+	 * Get Build Number.
+	 * @return String.
+	 */
 	public String getBuildNumber() {
 		return buildNumber;
 	}
-
+	
+	/**
+	 * Get Build Sequence.
+	 * @return int
+	 */
 	public int getBuildSequence() {
 		return buildSequence;
 	}
-
+	
+	/**
+	 * Get Message.
+	 * @return String
+	 */
 	public String getMessage() {
 		return message==null?this.toString():this.message;
 	}
-
+	
+	/**
+	 * @return true if the is downgrade build and false otherwise. 
+	 */
 	public boolean isDowngrade() {
 		return downgrade;
 	}

@@ -33,7 +33,7 @@ public class HelloCustomActionTest {
 	@Test
 	public void printHelloCustomActionTest() {
 	    helloCustomAction();
-	    assertEquals("Hello Custom Action!", outContent.toString());
+	    assertEquals("Hello Custom Action! Here you can put your arbitrary code.", outContent.toString());
 	}
 	
 	@Test

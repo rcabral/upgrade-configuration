@@ -15,12 +15,19 @@ import br.puc.rio.dao.BuildInformationDao;
 import br.puc.rio.model.UpgradeConfiguration;
 import br.puc.rio.util.JPAUtil;
 
+/**
+ * Class used as Controller, the gateway to start the process of Update.
+ */
 public class UpgradeConfigurationController {
 	
 	private static final Logger logger = LogManager.getLogger(UpgradeConfigurationController.class);  
 	
+	/**
+	 * Method used to start the update process.
+	 * @throws FileNotFoundException - When upgrade-configuration.xml is not found in the project root directory.
+	 */
 	public static void execute() throws FileNotFoundException {
-		logger.info("Begin");
+		logger.info("Initializing update process");
 		EntityManager entityManager = JPAUtil.createEntityManager();
 		FileReader fileReader = new FileReader("upgrade-configuration.xml");
 		XStream xStream = new XStream();
@@ -30,7 +37,7 @@ public class UpgradeConfigurationController {
 		BuildInformationDao buildInformationDao = new BuildInformationDao(entityManager);
 		Update update = Update.create(upgradeConfiguration,entityManager,buildInformationDao);
 		update.execute();
-		logger.info("End");
+		logger.info("Update process finished");
 	}
 
 	

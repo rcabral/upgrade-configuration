@@ -6,9 +6,17 @@ import java.nio.file.Path;
 
 import javax.persistence.EntityManager;
 
+/**
+ * 
+ * Class that implements the Run SQL File Action.
+ *
+ */
 public class RunSQLFileAction implements Action{
 	private String path;
-
+	
+	/**
+	 * @param path - path to the SQL Script File.
+	 */
 	public RunSQLFileAction(String path) {
 		this.path = path;
 	}

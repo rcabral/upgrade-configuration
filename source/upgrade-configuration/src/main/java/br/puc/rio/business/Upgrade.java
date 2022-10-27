@@ -16,6 +16,11 @@ import br.puc.rio.model.Status;
 import br.puc.rio.model.Step;
 import br.puc.rio.model.UpgradeConfiguration;
 
+/**
+ * 
+ * Implements Update, to create a upgrade process.
+ *
+ */
 public class Upgrade implements Update {
 	private EntityManager entityManager;
 	private BuildInformationDao buildInformationDao;
@@ -24,7 +29,13 @@ public class Upgrade implements Update {
 	private List<Build> builds;
 	private Index index;
 	private static final Logger logger = LogManager.getLogger(Upgrade.class);
-
+	
+	/**
+	 * Constructor Method.
+	 * @param upgradeConfiguration
+	 * @param entityManager
+	 * @param buildInformationDao
+	 */
 	public Upgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
 		this.buildInformationDao = buildInformationDao; 
@@ -41,7 +52,10 @@ public class Upgrade implements Update {
 		}
 		return lastAppliedBuild;
 	}
-
+	
+	/**
+	 * Method used to execute the Upgrade process.
+	 */
 	public void execute() {
 		if (!needToProcess()) {
 			return;

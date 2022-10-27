@@ -14,6 +14,11 @@ import br.puc.rio.model.BuildInformation;
 import br.puc.rio.model.Step;
 import br.puc.rio.model.UpgradeConfiguration;
 
+/**
+ * 
+ * Implements Update, to create a upgrade process.
+ *
+ */
 public class Downgrade implements Update {
 	private EntityManager entityManager;
 	private BuildInformationDao buildInformationDao;
@@ -23,7 +28,13 @@ public class Downgrade implements Update {
 	private List<Build> buildsFromXML;
 	private List<BuildInformation> buildsInformationToRevert;
 	private static final Logger logger = LogManager.getLogger(Downgrade.class);
-
+	
+	/**
+	 * Constructor Method.
+	 * @param upgradeConfiguration
+	 * @param entityManager
+	 * @param buildInformationDao
+	 */
 	public Downgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
 		this.buildInformationDao = buildInformationDao;
@@ -33,7 +44,7 @@ public class Downgrade implements Update {
 		this.buildsFromXML = upgradeConfiguration.getBuilds();
 		this.buildsInformationToRevert = getBuildsInformationToRevert(this.appliedBuildsInformation, this.downgradeBuild );
 	} 
-
+	
 	private List<BuildInformation> getBuildsInformationToRevert(List<BuildInformation> appliedBuilds, Build downgradeBuild){
 		List<BuildInformation> buildsToRevert = new ArrayList<>();
 		if(appliedBuilds.contains(new BuildInformation(downgradeBuild))){
@@ -44,7 +55,7 @@ public class Downgrade implements Update {
 		}
 		return buildsToRevert;
 	}
-
+		
 	@Override
 	public void execute() {
 		if (!needToProcess()) {

@@ -23,11 +23,6 @@
                               			<xs:documentation>Path to the SQL Script File.</xs:documentation>
                               		</xs:annotation>
                                 </xs:element>
-                                <xs:element minOccurs="0" name="className" type="xs:string">
-                                	<xs:annotation>
-                              			<xs:documentation>Class Name that implements the a Custom action.</xs:documentation>
-                              		</xs:annotation>
-                                </xs:element>
                                 <xs:element minOccurs="0" name="sql" type="xs:string">
                                 	<xs:annotation>
                               			<xs:documentation>SQL Script</xs:documentation>
@@ -45,14 +40,13 @@
                             <xs:complexType>
                               <xs:sequence>
                                 <xs:element minOccurs="0" name="path" type="xs:string" />
-                                <xs:element minOccurs="0" name="className" type="xs:string">
-                                	<xs:annotation>
-                              			<xs:documentation>Class Name that implements the Downgrade action.</xs:documentation>
-                              		</xs:annotation>
-                                </xs:element>
                                 <xs:element minOccurs="0" name="sql" type="xs:string" />
                               </xs:sequence>
-                              <xs:attribute name="class" type="xs:string" use="required" />
+                             <xs:attribute name="class" type="xs:string" use="required">
+                              	<xs:annotation>
+                              			<xs:documentation>Class that implements Action</xs:documentation>
+                              		</xs:annotation>
+                              </xs:attribute>
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>

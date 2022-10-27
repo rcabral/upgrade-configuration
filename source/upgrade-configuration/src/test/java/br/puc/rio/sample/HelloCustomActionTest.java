@@ -1,10 +1,11 @@
 package br.puc.rio.sample;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
+import javax.persistence.EntityManager;
 
 import org.junit.After;
 import org.junit.Before;
@@ -16,6 +17,7 @@ public class HelloCustomActionTest {
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 	private final PrintStream originalOut = System.out;
 	private final PrintStream originalErr = System.err;
+	private EntityManager entityManager;
 	
 	@Before
 	public void setUpStreams() {
@@ -31,19 +33,10 @@ public class HelloCustomActionTest {
 	
 	
 	@Test
-	public void printHelloCustomActionTest() {
-	    helloCustomAction();
-	    assertEquals("Hello Custom Action! Here you can put your arbitrary code.", outContent.toString());
+	public void printHelloCustomActionTest() throws Exception {
+	    new HelloCustomAction().execute(entityManager);
+	    String content = outContent.toString().replace("\n", "").replace("\r", "");
+	    assertEquals("Hello Custom Action! Here you can put your arbitrary code.", content);
 	}
-	
-	@Test
-	public void createNewHelloCustomActionTest() {
-	    assertTrue(new HelloCustomAction() instanceof HelloCustomAction);
-	}
-
-	private void helloCustomAction() {
-		HelloCustomAction.main(new String[] {});
-	}
-	
 
 }

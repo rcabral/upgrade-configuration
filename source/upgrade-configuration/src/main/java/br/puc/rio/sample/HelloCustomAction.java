@@ -1,16 +1,17 @@
 package br.puc.rio.sample;
 
+import javax.persistence.EntityManager;
+
+import br.puc.rio.model.Action;
+
 /**
  * A sample Class of a CustomAction implementation.
  */
-public class HelloCustomAction {
+public class HelloCustomAction implements Action {
 	
-	/**
-	 * Main Method used to put your arbitrary code.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		System.out.print("Hello Custom Action! Here you can put your arbitrary code.");
+	@Override
+	public void execute(EntityManager entityManager) throws Exception {
+		System.out.println("Hello Custom Action! Here you can put your arbitrary code.");
 	}
 
 }

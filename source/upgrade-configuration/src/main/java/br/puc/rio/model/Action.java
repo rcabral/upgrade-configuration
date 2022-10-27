@@ -12,7 +12,9 @@ public interface Action {
 	 * Get action type.
 	 * @return ActionType
 	 */
-	ActionType getActionType();
+	default ActionType getActionType() {
+		return ActionType.CUSTOM;
+	}
 	
 	/**
 	 * Method to execute the Action.
@@ -20,4 +22,7 @@ public interface Action {
 	 * @throws Exception
 	 */
 	void execute(EntityManager entityManager) throws Exception;
+	
+	
+	
 }

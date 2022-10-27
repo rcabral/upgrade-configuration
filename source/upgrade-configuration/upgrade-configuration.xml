@@ -13,14 +13,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 0.0.0.180122</message>
@@ -38,14 +34,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 1.0.0.180122</message>
@@ -63,14 +55,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 2.0.0.180122</message>
@@ -88,14 +76,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 3.0.0.180122</message>
@@ -113,14 +97,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 4.0.0.180122</message>
@@ -138,14 +118,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 5.0.0.180122</message>
@@ -163,14 +139,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 6.0.0.180122</message>
@@ -188,14 +160,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 7.0.0.180122</message>
@@ -214,14 +182,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+       <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 8.0.0.180122</message>
@@ -239,14 +203,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 8.0.0.180122</message>
@@ -265,14 +225,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 8.0.0.180122</message>
@@ -292,14 +248,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 8.0.0.180122</message>
@@ -318,14 +270,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 8.0.0.180122</message>
@@ -344,14 +292,10 @@
         </upgrade>
       </Step>
       <Step number="2">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.com.upgrade.CustomTest</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 8.0.0.180122</message>
@@ -442,9 +386,7 @@
   <build majorVersion="18" minorVersion="0" releaseVersion="0" buildNumber="180522" buildSequence="0">
     <steps>
       <Step number="0">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 18.0.0.190522</message>
@@ -467,9 +409,7 @@
   <build majorVersion="20" minorVersion="0" releaseVersion="0" buildNumber="230522" buildSequence="0">
     <steps>
       <Step number="0">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 20.0.0.230522</message>
@@ -478,9 +418,7 @@
   <build majorVersion="21" minorVersion="0" releaseVersion="0" buildNumber="240822" buildSequence="0">
     <steps>
       <Step number="0">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 21.0.0.240822</message>
@@ -489,19 +427,13 @@
   <build majorVersion="22" minorVersion="0" releaseVersion="0" buildNumber="2408222" buildSequence="0">
      <steps>
       <Step number="0">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="1">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 22.0.0.2408222</message>
@@ -510,15 +442,13 @@
   <build majorVersion="23" minorVersion="0" releaseVersion="0" buildNumber="2408223" buildSequence="0">
     <steps>
       <Step number="0">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 23.0.0.2408223</message>
   </build>
   
-  <build majorVersion="24" minorVersion="0" releaseVersion="0" buildNumber="130922" buildSequence="0" downgrade = "false">
+  <build majorVersion="24" minorVersion="0" releaseVersion="0" buildNumber="130922" buildSequence="0">
     <steps>
       <Step number="0">
         <upgrade class="br.puc.rio.model.RunSQLAction">
@@ -559,9 +489,7 @@
         </downgrade>
       </Step>
       <Step number="3">
-        <upgrade class="br.puc.rio.model.CustomAction">
-          <className>br.puc.rio.sample.HelloCustomAction</className>
-        </upgrade>
+        <upgrade class="br.puc.rio.sample.HelloCustomAction"/>
       </Step>
     </steps>
     <message>UpgradeConfiguration version 25.0.0.101022</message>

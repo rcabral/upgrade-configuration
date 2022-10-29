@@ -15,7 +15,7 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class UpgradeConfiguration {
 	
 	@XStreamImplicit(itemFieldName="build")
-	List<Build> builds;
+	private List<Build> builds;
 	
 	/**
 	 * @param List of Builds.

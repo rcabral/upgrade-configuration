@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Index.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Upgradeconfiguration</a> &gt; <a href="index.source.html" class="el_package">br.puc.rio.model</a> &gt; <span class="el_source">Index.java</span></div><h1>Index.java</h1><pre class="source lang-java linenums">package br.puc.rio.model;
+
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * 
+ * Implements Index of upgrade execution. 
+ * Index is a starting point for the upgrade. This starting point always starts after the last step of the last build applied to the server.
+ *
+ */
+public class Index {
+	private final int build;
+	private final int step;
+	
+	/**
+	 * Constructor Method
+	 * @param builds
+	 * @param lastBuildInformation
+	 */
+<span class="fc" id="L21">	public Index(List&lt;Build&gt; builds, BuildInformation lastBuildInformation) {</span>
+<span class="fc" id="L22">		int buildIndex = 0;</span>
+<span class="fc" id="L23">		int stepIndex = 0;</span>
+<span class="fc" id="L24">		Optional&lt;Build&gt; lastBuildApplied = getLastBuildApplied(lastBuildInformation);</span>
+						
+<span class="fc bfc" id="L26" title="All 4 branches covered.">		if (lastBuildApplied.isPresent() &amp;&amp; builds.contains(lastBuildApplied.get())) {</span>
+<span class="fc" id="L27">			buildIndex = builds.indexOf(lastBuildApplied.get());</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">			if (lastBuildInformation.getStatus() == Status.COMPLETE) {</span>
+<span class="fc" id="L29">				buildIndex++;</span>
+<span class="fc" id="L30">			} else {</span>
+<span class="fc" id="L31">				stepIndex = lastBuildInformation.getSteps();</span>
+			}
+		}
+		
+<span class="fc" id="L35">		build = buildIndex;</span>
+<span class="fc" id="L36">		step = stepIndex;</span>
+<span class="fc" id="L37">	}</span>
+
+	private Optional&lt;Build&gt; getLastBuildApplied(BuildInformation lastBuildInformation) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">		if(lastBuildInformation != null) {</span>
+<span class="fc" id="L41">			return Optional.of(lastBuildInformation.getBuild());</span>
+		}
+<span class="fc" id="L43">		return Optional.empty();</span>
+	}
+	
+	/**
+	 * Get number of build
+	 * @return int
+	 */
+	public int getBuild() {
+<span class="fc" id="L51">		return build;</span>
+	}
+	
+	/**
+	 * Get number of step
+	 * @return int
+	 */
+	public int getStep() {
+<span class="fc" id="L59">		return step;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

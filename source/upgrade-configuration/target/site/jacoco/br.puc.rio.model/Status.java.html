@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Status.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Upgradeconfiguration</a> &gt; <a href="index.source.html" class="el_package">br.puc.rio.model</a> &gt; <span class="el_source">Status.java</span></div><h1>Status.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">package br.puc.rio.model;</span>
+
+/**
+ * 
+ * Enumerator for BuildInformation Status.
+ *
+ */
+<span class="fc" id="L8">public enum Status {</span>
+<span class="fc" id="L9">	PARCIAL(&quot;parcial&quot;), COMPLETE(&quot;complete&quot;);</span>
+
+	private final String description;
+	
+	/**
+	 * Constructor Method
+	 * @param description
+	 */
+<span class="fc" id="L17">	Status(String description) {</span>
+<span class="fc" id="L18">		this.description = description;</span>
+<span class="fc" id="L19">	}</span>
+	
+	/**
+	 * Get description.
+	 * @return String
+	 */
+	public String getDescription() {
+<span class="fc" id="L26">		return description;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Build.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Upgradeconfiguration</a> &gt; <a href="index.source.html" class="el_package">br.puc.rio.model</a> &gt; <span class="el_source">Build.java</span></div><h1>Build.java</h1><pre class="source lang-java linenums">package br.puc.rio.model;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.commons.lang.builder.CompareToBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+import com.thoughtworks.xstream.converters.basic.BooleanConverter;
+
+/**
+ * 
+ * Class that implements a Build.
+ *
+ */
+public class Build implements Comparable&lt;Build&gt; {
+	@XStreamAsAttribute
+	private int majorVersion;
+	@XStreamAsAttribute
+	private int minorVersion;
+	@XStreamAsAttribute
+	private int releaseVersion;
+	@XStreamAsAttribute
+	private String buildNumber;
+	@XStreamAsAttribute
+	private int buildSequence;
+	private List&lt;Step&gt; steps;
+	private String message;
+	@XStreamAsAttribute
+	@XStreamConverter(value=BooleanConverter.class, booleans={false}, strings={&quot;true&quot;, &quot;false&quot;})
+	private boolean downgrade;
+	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 * @param steps
+	 * @param message
+	 */
+	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
+			List&lt;Step&gt; steps, String message) {
+<span class="fc" id="L46">		super();</span>
+<span class="fc" id="L47">		this.majorVersion = majorVersion;</span>
+<span class="fc" id="L48">		this.minorVersion = minorVersion;</span>
+<span class="fc" id="L49">		this.releaseVersion = releaseVersion;</span>
+<span class="fc" id="L50">		this.buildNumber = buildNumber;</span>
+<span class="fc" id="L51">		this.buildSequence = buildSequence;</span>
+<span class="fc" id="L52">		this.steps = steps;</span>
+<span class="fc" id="L53">		this.message = message;</span>
+<span class="fc" id="L54">		this.downgrade = false;</span>
+<span class="fc" id="L55">	}</span>
+	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 * @param steps
+	 * @param message
+	 * @param downgrade
+	 */
+	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
+			List&lt;Step&gt; steps, String message, boolean downgrade) {
+<span class="fc" id="L70">		super();</span>
+<span class="fc" id="L71">		this.majorVersion = majorVersion;</span>
+<span class="fc" id="L72">		this.minorVersion = minorVersion;</span>
+<span class="fc" id="L73">		this.releaseVersion = releaseVersion;</span>
+<span class="fc" id="L74">		this.buildNumber = buildNumber;</span>
+<span class="fc" id="L75">		this.buildSequence = buildSequence;</span>
+<span class="fc" id="L76">		this.steps = steps;</span>
+<span class="fc" id="L77">		this.message = message;</span>
+<span class="fc" id="L78">		this.downgrade = downgrade;</span>
+<span class="fc" id="L79">	}</span>
+	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 */
+	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence) {
+<span class="fc" id="L90">		super();</span>
+<span class="fc" id="L91">		this.majorVersion = majorVersion;</span>
+<span class="fc" id="L92">		this.minorVersion = minorVersion;</span>
+<span class="fc" id="L93">		this.releaseVersion = releaseVersion;</span>
+<span class="fc" id="L94">		this.buildNumber = buildNumber;</span>
+<span class="fc" id="L95">		this.buildSequence = buildSequence;</span>
+<span class="fc" id="L96">		this.steps = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L97">		this.downgrade = false;</span>
+<span class="fc" id="L98">	}</span>
+	
+	/**
+	 * Constructor Method.
+	 * @param majorVersion
+	 * @param minorVersion
+	 * @param releaseVersion
+	 * @param buildNumber
+	 * @param buildSequence
+	 * @param downgrade
+	 */
+	public Build(int majorVersion, int minorVersion, int releaseVersion, String buildNumber, int buildSequence,
+			boolean downgrade) {
+<span class="fc" id="L111">		super();</span>
+<span class="fc" id="L112">		this.majorVersion = majorVersion;</span>
+<span class="fc" id="L113">		this.minorVersion = minorVersion;</span>
+<span class="fc" id="L114">		this.releaseVersion = releaseVersion;</span>
+<span class="fc" id="L115">		this.buildNumber = buildNumber;</span>
+<span class="fc" id="L116">		this.buildSequence = buildSequence;</span>
+<span class="fc" id="L117">		this.steps = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L118">		this.downgrade = downgrade;</span>
+<span class="fc" id="L119">	}</span>
+
+	@Override
+	public String toString() {
+<span class="fc" id="L123">		return new ToStringBuilder(this).append(&quot;majorVersion&quot;, majorVersion).append(&quot;minorVersion&quot;, minorVersion)</span>
+<span class="fc" id="L124">				.append(&quot;releaseVersion&quot;, releaseVersion).append(&quot;buildNumber&quot;, buildNumber)</span>
+<span class="fc" id="L125">				.append(&quot;buildSequence&quot;, buildSequence).append(&quot;message&quot;, message).toString();</span>
+	}
+
+	@Override
+	public int compareTo(final Build otherBuild) {
+<span class="fc" id="L130">		return new CompareToBuilder().append(majorVersion, otherBuild.majorVersion).append(minorVersion, otherBuild.minorVersion)</span>
+<span class="fc" id="L131">				.append(releaseVersion, otherBuild.releaseVersion).append(buildNumber, otherBuild.buildNumber)</span>
+<span class="fc" id="L132">				.append(buildSequence, otherBuild.buildSequence).toComparison();</span>
+	}
+	
+	/**
+	 * @param  buildInformation to be compared.
+     * @return  a negative integer, zero, or a positive integer as this object
+     *          is less than, equal to, or greater than the specified object.
+	 */
+	public int compareTo(final BuildInformation buildInformation) {
+<span class="fc" id="L141">		return new CompareToBuilder().append(majorVersion, buildInformation.getMajorVersion()).append(minorVersion, buildInformation.getMinorVersion())</span>
+<span class="fc" id="L142">				.append(releaseVersion, buildInformation.getReleaseVersion()).append(buildNumber, buildInformation.getBuildNumber())</span>
+<span class="fc" id="L143">				.append(buildSequence, buildInformation.getBuildSequence()).toComparison();</span>
+	}
+
+	@Override
+	public int hashCode() {
+<span class="fc" id="L148">		final int prime = 31;</span>
+<span class="fc" id="L149">		int result = 1;</span>
+<span class="pc bpc" id="L150" title="1 of 2 branches missed.">		result = prime * result + ((buildNumber == null) ? 0 : buildNumber.hashCode());</span>
+<span class="fc" id="L151">		result = prime * result + buildSequence;</span>
+<span class="fc" id="L152">		result = prime * result + majorVersion;</span>
+<span class="fc" id="L153">		result = prime * result + minorVersion;</span>
+<span class="fc" id="L154">		result = prime * result + releaseVersion;</span>
+<span class="fc" id="L155">		return result;</span>
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+<span class="fc bfc" id="L160" title="All 2 branches covered.">		if (this == obj)</span>
+<span class="fc" id="L161">			return true;</span>
+<span class="pc bpc" id="L162" title="1 of 2 branches missed.">		if (obj == null)</span>
+<span class="nc" id="L163">			return false;</span>
+<span class="pc bpc" id="L164" title="1 of 2 branches missed.">		if (getClass() != obj.getClass())</span>
+<span class="nc" id="L165">			return false;</span>
+<span class="fc" id="L166">		Build other = (Build) obj;</span>
+<span class="pc bpc" id="L167" title="1 of 2 branches missed.">		if (buildNumber == null) {</span>
+<span class="nc bnc" id="L168" title="All 2 branches missed.">			if (other.buildNumber != null)</span>
+<span class="nc" id="L169">				return false;</span>
+<span class="pc bpc" id="L170" title="1 of 2 branches missed.">		} else if (!buildNumber.equals(other.buildNumber))</span>
+<span class="nc" id="L171">			return false;</span>
+<span class="pc bpc" id="L172" title="1 of 2 branches missed.">		if (buildSequence != other.buildSequence)</span>
+<span class="nc" id="L173">			return false;</span>
+<span class="fc bfc" id="L174" title="All 2 branches covered.">		if (majorVersion != other.majorVersion)</span>
+<span class="fc" id="L175">			return false;</span>
+<span class="pc bpc" id="L176" title="1 of 2 branches missed.">		if (minorVersion != other.minorVersion)</span>
+<span class="nc" id="L177">			return false;</span>
+<span class="pc bpc" id="L178" title="1 of 2 branches missed.">		if (releaseVersion != other.releaseVersion)</span>
+<span class="nc" id="L179">			return false;</span>
+<span class="fc" id="L180">		return true;</span>
+	}
+	
+	/**
+	 * Get list of Steps.
+	 * @return List&lt;Step&gt;
+	 */
+	public List&lt;Step&gt; getSteps() {
+<span class="fc" id="L188">		return steps;</span>
+	}
+	
+	/**
+	 * Get Major Version.
+	 * @return int
+	 */
+	public int getMajorVersion() {
+<span class="fc" id="L196">		return majorVersion;</span>
+	}
+	
+	/**
+	 * Get Minot Version.
+	 * @return int
+	 */
+	public int getMinorVersion() {
+<span class="fc" id="L204">		return minorVersion;</span>
+	}
+	
+	/**
+	 * Get Release Version.
+	 * @return
+	 */
+	public int getReleaseVersion() {
+<span class="fc" id="L212">		return releaseVersion;</span>
+	}
+	
+	/**
+	 * Get Build Number.
+	 * @return String.
+	 */
+	public String getBuildNumber() {
+<span class="fc" id="L220">		return buildNumber;</span>
+	}
+	
+	/**
+	 * Get Build Sequence.
+	 * @return int
+	 */
+	public int getBuildSequence() {
+<span class="fc" id="L228">		return buildSequence;</span>
+	}
+	
+	/**
+	 * Get Message.
+	 * @return String
+	 */
+	public String getMessage() {
+<span class="fc bfc" id="L236" title="All 2 branches covered.">		return message==null?this.toString():this.message;</span>
+	}
+	
+	/**
+	 * @return true if is downgrade build and false otherwise. 
+	 */
+	public boolean isDowngrade() {
+<span class="fc" id="L243">		return downgrade;</span>
+	}
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

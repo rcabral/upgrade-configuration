@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BuildInformation.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Upgradeconfiguration</a> &gt; <a href="index.source.html" class="el_package">br.puc.rio.model</a> &gt; <span class="el_source">BuildInformation.java</span></div><h1>BuildInformation.java</h1><pre class="source lang-java linenums">package br.puc.rio.model;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+
+import org.apache.commons.lang.builder.CompareToBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+/**
+ * 
+ * Class that implements a Build Information.
+ * This class is persisted in the database to mark applied builds.
+ * 
+ */
+@Entity
+public class BuildInformation {
+	@Id
+	private String id;
+	private int majorVersion;
+	private int minorVersion;
+	private int releaseVersion;
+	private String buildNumber;
+	private int buildSequence;
+	private int steps;
+	private LocalDateTime upgradeDate;
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	
+	/**
+	 * Constructor Method.
+	 */
+<span class="nc" id="L37">	public BuildInformation() {</span>
+<span class="nc" id="L38">	}</span>
+	
+	/**
+	 * Constructor Method.
+	 * @param build
+	 * @param steps
+	 * @param status
+	 */
+<span class="fc" id="L46">	public BuildInformation(Build build,int steps,Status status) {</span>
+<span class="fc" id="L47">		this.id = UUID.randomUUID().toString();</span>
+<span class="fc" id="L48">		this.majorVersion = build.getMajorVersion();</span>
+<span class="fc" id="L49">		this.minorVersion = build.getMinorVersion();</span>
+<span class="fc" id="L50">		this.releaseVersion = build.getReleaseVersion();</span>
+<span class="fc" id="L51">		this.buildNumber = build.getBuildNumber();</span>
+<span class="fc" id="L52">		this.buildSequence = build.getBuildSequence();</span>
+<span class="fc" id="L53">		this.steps = steps;</span>
+<span class="fc" id="L54">		this.upgradeDate = LocalDateTime.now();</span>
+<span class="fc" id="L55">		this.status = status;</span>
+<span class="fc" id="L56">	}</span>
+	
+	/**
+	 * Constructor Method.
+	 * @param build
+	 */
+<span class="fc" id="L62">	public BuildInformation(Build build) {</span>
+<span class="fc" id="L63">		this.id = UUID.randomUUID().toString();</span>
+<span class="fc" id="L64">		this.majorVersion = build.getMajorVersion();</span>
+<span class="fc" id="L65">		this.minorVersion = build.getMinorVersion();</span>
+<span class="fc" id="L66">		this.releaseVersion = build.getReleaseVersion();</span>
+<span class="fc" id="L67">		this.buildNumber = build.getBuildNumber();</span>
+<span class="fc" id="L68">		this.buildSequence = build.getBuildSequence();</span>
+<span class="fc" id="L69">		this.upgradeDate = LocalDateTime.now();</span>
+<span class="fc" id="L70">	}</span>
+	
+	/**
+	 * Get Build.
+	 * @return Build.
+	 */
+	public Build getBuild() {
+<span class="fc" id="L77">		return new Build(majorVersion, minorVersion, releaseVersion, buildNumber, buildSequence);</span>
+	}
+	
+	/**
+	 * Get id.
+	 * @return String
+	 */
+	public String getId() {
+<span class="fc" id="L85">		return id;</span>
+	}
+	
+	/**
+	 * Get Major Version.
+	 * @return int
+	 */
+	public int getMajorVersion() {
+<span class="fc" id="L93">		return majorVersion;</span>
+	}
+	
+	/**
+	 * Get Minot Version.
+	 * @return int
+	 */
+	public int getMinorVersion() {
+<span class="fc" id="L101">		return minorVersion;</span>
+	}
+	
+	/**
+	 * Get Release Version.
+	 * @return
+	 */
+	public int getReleaseVersion() {
+<span class="fc" id="L109">		return releaseVersion;</span>
+	}
+	
+	/**
+	 * Get Build Number.
+	 * @return String.
+	 */
+	public String getBuildNumber() {
+<span class="fc" id="L117">		return buildNumber;</span>
+	}
+	
+	/**
+	 * Get Build Sequence.
+	 * @return int
+	 */
+	public int getBuildSequence() {
+<span class="fc" id="L125">		return buildSequence;</span>
+	}
+	
+	/**
+	 * Get number of Steps.
+	 * @return int 
+	 */
+	public int getSteps() {
+<span class="fc" id="L133">		return steps;</span>
+	}
+	
+	/**
+	 * Get the Build application date.
+	 * @return LocalDateTime
+	 */
+	public LocalDateTime getUpgradeDate() {
+<span class="fc" id="L141">		return upgradeDate;</span>
+	}
+	
+	/**
+	 * Get Status
+	 * @return Status
+	 */
+	public Status getStatus() {
+<span class="fc" id="L149">		return status;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="fc" id="L154">		return new ToStringBuilder(this).append(&quot;majorVersion&quot;, majorVersion).append(&quot;minorVersion&quot;, minorVersion)</span>
+<span class="fc" id="L155">				.append(&quot;releaseVersion&quot;, releaseVersion).append(&quot;buildNumber&quot;, buildNumber)</span>
+<span class="fc" id="L156">				.append(&quot;buildSequence&quot;, buildSequence).append(&quot;steps&quot;, steps).append(&quot;upgradeDate&quot;,upgradeDate).append(&quot;status&quot;,status).toString();</span>
+	}
+	
+	/**
+	 * @param  other BuildInformation to be compared.
+     * @return  a negative integer, zero, or a positive integer as this object
+     *          is less than, equal to, or greater than the specified object.
+	 */	
+	public int compareTo(final BuildInformation otherBuildInformation) {
+<span class="fc" id="L165">		return new CompareToBuilder().append(majorVersion, otherBuildInformation.majorVersion).append(minorVersion, otherBuildInformation.minorVersion)</span>
+<span class="fc" id="L166">				.append(releaseVersion, otherBuildInformation.releaseVersion).append(buildNumber, otherBuildInformation.buildNumber)</span>
+<span class="fc" id="L167">				.append(buildSequence, otherBuildInformation.buildSequence).toComparison();</span>
+	}
+	
+	/**
+	 * @param  other Build to be compared.
+     * @return  a negative integer, zero, or a positive integer as this object
+     *          is less than, equal to, or greater than the specified object.
+	 */	
+	public int compareTo(final Build build) {
+<span class="fc" id="L176">		return new CompareToBuilder().append(majorVersion, build.getMajorVersion()).append(minorVersion, build.getMinorVersion())</span>
+<span class="fc" id="L177">				.append(releaseVersion, build.getReleaseVersion()).append(buildNumber, build.getBuildNumber())</span>
+<span class="fc" id="L178">				.append(buildSequence, build.getBuildSequence()).toComparison();</span>
+	}
+	
+	@Override
+	public int hashCode() {
+<span class="fc" id="L183">		final int prime = 31;</span>
+<span class="fc" id="L184">		int result = 1;</span>
+<span class="pc bpc" id="L185" title="1 of 2 branches missed.">		result = prime * result + ((buildNumber == null) ? 0 : buildNumber.hashCode());</span>
+<span class="fc" id="L186">		result = prime * result + buildSequence;</span>
+<span class="fc" id="L187">		result = prime * result + majorVersion;</span>
+<span class="fc" id="L188">		result = prime * result + minorVersion;</span>
+<span class="fc" id="L189">		result = prime * result + releaseVersion;</span>
+<span class="fc" id="L190">		return result;</span>
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+<span class="pc bpc" id="L195" title="1 of 2 branches missed.">		if (this == obj)</span>
+<span class="nc" id="L196">			return true;</span>
+<span class="pc bpc" id="L197" title="1 of 2 branches missed.">		if (obj == null)</span>
+<span class="nc" id="L198">			return false;</span>
+<span class="pc bpc" id="L199" title="1 of 2 branches missed.">		if (getClass() != obj.getClass())</span>
+<span class="nc" id="L200">			return false;</span>
+<span class="fc" id="L201">		BuildInformation other = (BuildInformation) obj;</span>
+<span class="pc bpc" id="L202" title="1 of 2 branches missed.">		if (buildNumber == null) {</span>
+<span class="nc bnc" id="L203" title="All 2 branches missed.">			if (other.buildNumber != null)</span>
+<span class="nc" id="L204">				return false;</span>
+<span class="pc bpc" id="L205" title="1 of 2 branches missed.">		} else if (!buildNumber.equals(other.buildNumber))</span>
+<span class="nc" id="L206">			return false;</span>
+<span class="pc bpc" id="L207" title="1 of 2 branches missed.">		if (buildSequence != other.buildSequence)</span>
+<span class="nc" id="L208">			return false;</span>
+<span class="pc bpc" id="L209" title="1 of 2 branches missed.">		if (majorVersion != other.majorVersion)</span>
+<span class="nc" id="L210">			return false;</span>
+<span class="pc bpc" id="L211" title="1 of 2 branches missed.">		if (minorVersion != other.minorVersion)</span>
+<span class="nc" id="L212">			return false;</span>
+<span class="pc bpc" id="L213" title="1 of 2 branches missed.">		if (releaseVersion != other.releaseVersion)</span>
+<span class="nc" id="L214">			return false;</span>
+<span class="fc" id="L215">		return true;</span>
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

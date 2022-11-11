@@ -1,3 +1,3 @@
 # Upgrade Configuration
 
-Um controle de versão para o banco de dados, para que o desenvolvedor tenha o poder de migrá-lo com facilidade e confiança. Permite que as evoluções de banco de dados sejam enviadas junto com o aplicativo e executadas automaticamente na inicialização. O que facilita o processo de entrega contínua da aplicação e favorece a ampliação da cultura de desenvolvimento ágil e devops.
+A version control for the database, so the developer has the power to migrate it easily and with security. Allows database evolutions to be shipped along with the application and run automatically at startup. This facilitates the continuous application delivery process and favors the expansion of the agile development culture and devops.

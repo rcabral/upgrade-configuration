@@ -2,15 +2,17 @@
 
 A version control for the database, so the developer has the power to migrate it easily and with security. Allows database evolutions to be shipped along with the application and run automatically at startup. This facilitates the continuous application delivery process and favors the expansion of the agile development culture and devops.
 
-![some discription](https://tinyurl.com/upgrade-configuration-doc "some discription")
+## Source code
 
+[Link to Source Code] (https://github.com/rcabral/upgrade-configuration/tree/main/source/upgrade-configuration)
 
-<image src="https://tinyurl.com/upgrade-configuration-doc"/>
+## Sample web project
 
-<embed src="https://tinyurl.com/upgrade-configuration-doc">
+[Link to Sample web project] (https://github.com/rcabral/upgrade-configuration/tree/main/source/upgrade-configuration)
 
-<object data="https://tinyurl.com/upgrade-configuration-doc" type="application/pdf" width="100%"> 
-</object>
+## Documentation
+
+[Link to Documentation] (https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/docs/raphael-cabral-programming-conclusion-project.pdf)
 
 
 

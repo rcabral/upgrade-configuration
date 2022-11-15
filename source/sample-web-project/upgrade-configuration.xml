@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UpgradeConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="upgrade-configuration.xsd">
+<!-- List of Builds -->
+<build majorVersion="1" minorVersion="0" releaseVersion="0" buildNumber="151122" buildSequence="0">
+	<!-- List of Steps -->
+    <steps>
+      <Step number="0">
+        <!-- Upgrade Action -->
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE MY_FIRST_TABLE(id int(4) AUTO_INCREMENT,name varchar(30) NOT NULL,PRIMARY KEY (id));</sql>
+        </upgrade>
+         <!-- Downgrade Action -->
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE MY_FIRST_TABLE;</sql>
+        </downgrade>
+      </Step>
+      <Step number="1">
+      	<!-- Upgrade Action -->
+        <upgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>CREATE TABLE MY_SECOND_TABLE(id int(4) AUTO_INCREMENT,name varchar(30) NOT NULL,PRIMARY KEY (id));</sql>
+        </upgrade>
+      	<!-- Downgrade Action -->
+        <downgrade class="br.puc.rio.model.RunSQLAction">
+          <sql>DROP TABLE MY_SECOND_TABLE;</sql>
+        </downgrade>
+      </Step>
+    </steps>
+    <message>UpgradeConfiguration version 1.0.0.180122</message>
+  </build>
+</UpgradeConfiguration>

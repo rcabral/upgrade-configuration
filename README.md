@@ -12,7 +12,7 @@ A version control for the database, so the developer has the power to migrate it
 
 ## Documentation
 
-[Link to Documentation] (https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/docs/raphael-cabral-programming-conclusion-project.pdf)
+[Link to Documentation] (https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/docs/raphael-cabral-programming-conclusion-project.pdf)
 
 
 

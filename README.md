@@ -12,8 +12,9 @@ A version control for the database, so the developer has the power to migrate it
 
 ## Documentation
 
-[Link to Documentation] (https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/docs/raphael-cabral-programming-conclusion-project.pdf)
+Project presented to the Programa de Pós–graduação em Informática, do Departamento de Informática da PUC-Rio in partial fulfillment of the requirements for the degree of Mestre em Informática.
 
+[Link to Documentation] (https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/docs/raphael-cabral-programming-conclusion-project.pdf)
 
 # User Manual
 

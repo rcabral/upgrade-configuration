@@ -86,7 +86,7 @@ Build is composed of 2 steps, with an upgrade and a downgrade action.
 
 One note is that the downgrade action is not mandatory, only upgrade.
 
-### Running The Upgrade Configuration {#Running The Upgrade Configuration}
+### Running The Upgrade Configuration
 
 To run the upgrade configuration and synchronize your builds declared in
 the XML file with the database, just run the method named execute, from
@@ -118,13 +118,9 @@ public class StartupComponent {
 ### Upgrade your Build
 
 To create a new build and synchronize with your database. Add a new
-build to the upgrade-configuration.xml file and run the upgrade
-configuration as described in subsection
-[6.3.2](#Running The Upgrade Configuration){reference-type="ref"
-reference="Running The Upgrade Configuration"}.
+build to the upgrade-configuration.xml file and run the upgrade.
 
-An example of creating a new build in the upgrade-configuration.xml file
-can be seen in XML code. And it is also available on GitHub at [https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml](https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml).
+An example of creating a new build in the upgrade-configuration.xml file can be seen in XML code. And it is also available on GitHub at [https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml](https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml).
 Note that the creation of the new build starts from line 35.
 
 ``` {#upgrade-build .xml language="XML" caption="Upgrade Build" label="upgrade-build"}
@@ -277,12 +273,9 @@ Note that in line 7 the downgrade attribute is set to true.
 ### Execution Log
 
 The execution log is available through the upgrade.log file at the root
-of your project. An example of the Log can be seen in Figure
-[6.2](#fig:execution-log){reference-type="ref"
-reference="fig:execution-log"}.
+of your project. An example of the Log can be seen in Figure.
 
-![Execution Log](source/upgrade-configuration/docs/pictures/execution-log.png){#fig:execution-log
-width="14cm"}
+![Execution Log](source/upgrade-configuration/docs/pictures/execution-log.png)
 
 ### Checking synchronized Builds in the Database
 
@@ -290,18 +283,14 @@ To check the Builds applied to your Database, just check the contents of
 the BuildInformation table in your database. This table is created
 automatically on the first run of Upgrade Configuration.
 
-An example can be seen in Figure
-[6.2](#fig:execution-log){reference-type="ref"
-reference="fig:execution-log"}
+An example can be seen in Figure (#fig:execution-log).
 
 ![Sample of content in BuildInformation
 table](source/upgrade-configuration/docs/pictures/build-information.png){#fig:execution-log width="14cm"}
 
 ## Detailing the structure of a Build
 
-A build is composed of a list of Steps. As can be seen in the XML code
-[\[first-build\]](#first-build){reference-type="ref"
-reference="first-build"}.
+A build is composed of a list of Steps. As can be seen in the XML code.
 
 ### Detailing the structure of a Step
 
@@ -309,9 +298,7 @@ A step is composed of the number attribute and an upgrade action and
 downgrade action. The number attribute informs the step sequence. The
 upgrade action executes scripts in order to regress the database. The
 downgrade action executes scripts in order to regress the database. As
-can be seen in the XML code
-[\[first-build\]](#first-build){reference-type="ref"
-reference="first-build"}.
+can be seen in the XML code.
 
 Note that the upgrade action is mandatory for every step, but the
 downgrade action is optional.
@@ -330,9 +317,7 @@ action.
 To use the RunSQLAction action type, set the class attribute of the
 upgrade, or downgrade tags with the value
 \"br.puc.rio.model.RunSQLAction\". And fill the sql tag, with the sql
-script to be executed. As can be seen in the XML code
-[\[RunSQLAction\]](#RunSQLAction){reference-type="ref"
-reference="RunSQLAction"}.
+script to be executed. As can be seen in the XML code.
 
 ``` {#RunSQLAction .xml language="XML" caption="RunSQLAction sample" label="RunSQLAction"}
 <!-- Upgrade Action -->
@@ -348,9 +333,7 @@ To use the RunSQLFileAction action type, set the class attribute of the
 upgrade, or downgrade tags with the value
 \"br.puc.rio.model.RunSQLFileAction\". And fill the path tag, with the
 path to the sql file that has the content to be executed. As can be seen
-in the XML code
-[\[RunSQLFileAction\]](#RunSQLFileAction){reference-type="ref"
-reference="RunSQLFileAction"}.
+in the XML code.
 
 ``` {#RunSQLFileAction .xml language="XML" caption="RunSQLFileAction sample" label="RunSQLFileAction"}
 <!-- Upgrade Action -->
@@ -363,14 +346,10 @@ reference="RunSQLFileAction"}.
 
 To use a Custon action type, set the class attribute of the upgrade, or
 downgrade tags with complete name of your custom class. As can be seen
-in the XML code
-[\[RunSQLFileAction\]](#RunSQLFileAction){reference-type="ref"
-reference="RunSQLFileAction"}.
+in the XML code.
 
 Your Custom Class just need to implements the interface Action, how the
-sample code
-[\[HelloCustomAction\]](#HelloCustomAction){reference-type="ref"
-reference="HelloCustomAction"}. Also available on GitHub at
+sample code. Also available on GitHub at
 <https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/src/main/java/br/puc/rio/sample/HelloCustomAction.java>.
 
 ``` {#CustomAction .xml language="XML" caption="CustomAction sample" label="CustomAction"}

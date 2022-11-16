@@ -12,7 +12,7 @@ A version control for the database, so the developer has the power to migrate it
 
 ## Documentation
 
-Project presented to the Programa de Pós–graduação em Informática, do Departamento de Informática da PUC-Rio in partial fulfillment of the requirements for the degree of Mestre em Informática.
+Project presented to the Programa de Pós–graduação em Informática, do Departamento de Informática da PUC-Rio in partial fulfillment of the requirements for the degree of Mestre em Informática.
 
 [Link to Documentation] (https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/docs/raphael-cabral-programming-conclusion-project.pdf)
 

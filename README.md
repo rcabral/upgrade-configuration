@@ -15,7 +15,7 @@ A version control for the database, so the developer has the power to migrate it
 [Link to Documentation] (https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/docs/raphael-cabral-programming-conclusion-project.pdf)
 
 
-# User Manual {#cha:User Manual}
+# User Manual
 
 ## Prerequisites
 
@@ -46,9 +46,7 @@ Maven will take care of downloading all required dependencies.
 ### Creating your first Build
 
 By convention, to manage your Builds, just create the file
-upgrade-configuration.xml in the root of your project. The XML code
-[\[first-build\]](#first-build){reference-type="ref"
-reference="first-build"}, also present at
+upgrade-configuration.xml in the root of your project. The XML code, also present at
 [https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/demo/first-build/upgrade-configuration.xml](https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/demo/first-build/upgrade-configuration.xml),
 presents an example of creating your first Build. As can be seen, this
 Build is composed of 2 steps, with an upgrade and a downgrade action.
@@ -95,11 +93,7 @@ the XML file with the database, just run the method named execute, from
 the br.puc.rio.controller.UpgradeConfigurationController class.
 
 It is recommended that this method be executed at server startup, so
-that every build change is synchronized. The code
-[\[startup-component\]](#startup-component){reference-type="ref"
-reference="startup-component"} presents an example of creating a
-component with Spring Boot, so that the method is executed at server
-startup.
+that every build change is synchronized. The code presents an example of creating a component with Spring Boot, so that the method is executed at server startup.
 
 ``` {#startup-component .java language="Java" caption="Running The Upgrade Configuration on Startup" label="startup-component"}
 package br.puc.rio;
@@ -130,10 +124,7 @@ configuration as described in subsection
 reference="Running The Upgrade Configuration"}.
 
 An example of creating a new build in the upgrade-configuration.xml file
-can be seen in XML code
-[\[upgrade-build\]](#upgrade-build){reference-type="ref"
-reference="upgrade-build"}. And it is also available on GitHub at
-[https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml](https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml).
+can be seen in XML code. And it is also available on GitHub at [https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml](https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/demo/upgrade-build/upgrade-configuration.xml).
 Note that the creation of the new build starts from line 35.
 
 ``` {#upgrade-build .xml language="XML" caption="Upgrade Build" label="upgrade-build"}
@@ -206,14 +197,10 @@ Note that the creation of the new build starts from line 35.
 
 ### Downgrade your Build
 
-In some cases it may be valuable to downgrade your database to a point
-earlier than the current one. In these cases, choose a previous build
-and set the downgrade attribute to true. All later builds will be
-regressed.
+In some cases it may be valuable to downgrade your database to a point earlier than the current one. In these cases, choose a previous build
+and set the downgrade attribute to true. All later builds will be regressed.
 
-The XML code
-[\[downgrade-build\]](#downgrade-build){reference-type="ref"
-reference="downgrade-build"} shows an example where the Build
+The XML code shows an example where the Build
 2.0.0.161122 is being downgraded to Build version 1.0.0.151122. It´s
 also available on GitHub at
 [https://github.com/rcabral/upgrade-configuration/raw/main/source/upgrade-configuration/demo/downgrade-build/upgrade-configuration.xml](https://github.com/rcabral/upgrade-configuration/blob/main/source/upgrade-configuration/demo/downgrade-build/upgrade-configuration.xml).

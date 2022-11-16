@@ -8,7 +8,7 @@ A version control for the database, so the developer has the power to migrate it
 
 ## Sample web project
 
-[Link to Sample web project] (https://github.com/rcabral/upgrade-configuration/tree/main/source/upgrade-configuration)
+[Link to Sample web project] (https://github.com/rcabral/upgrade-configuration/tree/main/source/sample-web-project)
 
 ## Documentation
 

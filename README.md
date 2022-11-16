@@ -284,10 +284,10 @@ To check the Builds applied to your Database, just check the contents of
 the BuildInformation table in your database. This table is created
 automatically on the first run of Upgrade Configuration.
 
-An example can be seen in Figure (#fig:execution-log).
+An example can be seen in the Figure.
 
 ![Sample of content in BuildInformation
-table](source/upgrade-configuration/docs/pictures/build-information.png){#fig:execution-log width="14cm"}
+table](source/upgrade-configuration/docs/pictures/build-information.png)
 
 ## Detailing the structure of a Build
 

@@ -29,12 +29,7 @@ public class Downgrade implements Update {
 	private List<BuildInformation> buildsInformationToRevert;
 	private static final Logger logger = LogManager.getLogger(Downgrade.class);
 	
-	/**
-	 * Constructor Method.
-	 * @param upgradeConfiguration
-	 * @param entityManager
-	 * @param buildInformationDao
-	 */
+	
 	public Downgrade(UpgradeConfiguration upgradeConfiguration, EntityManager entityManager, BuildInformationDao buildInformationDao) {
 		this.entityManager = entityManager;
 		this.buildInformationDao = buildInformationDao;
